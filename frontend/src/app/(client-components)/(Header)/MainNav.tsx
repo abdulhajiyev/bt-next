@@ -40,6 +40,10 @@ const MainNav: FC<MainNavProps> = ({ className = "" }) => {
           </div>
             <div className="px-1" />
             <SwitchDarkMode />
+            <LangDropdown
+          className="flex"
+          panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 right-3 bottom-full sm:px-0"
+        />
           </div>
 
           <div className="flex xl:hidden items-center">
