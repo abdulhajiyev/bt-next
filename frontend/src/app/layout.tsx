@@ -34,10 +34,10 @@ export default function RootLayout({
     <html className={poppins.className}>
       <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
         <ClientCommons />
-        <SiteHeader />
+        {/* <SiteHeader /> */}
         {children}
-        <FooterNav />
-        <Footer />
+        {/* <FooterNav /> */}
+        {/* <Footer /> */}
       </body>
     </html>
   );

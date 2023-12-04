@@ -12,16 +12,74 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React from "react";
 import { NavItemType } from "./NavigationItem";
+import ncNanoId from "@/utils/ncNanoId";
+import { useScopedI18n } from "locales/client";
 
 export interface NavMobileProps {
-  data?: NavItemType[];
+  // data?: NavItemType[];
   onClickClose?: () => void;
 }
 
+
+
 const NavMobile: React.FC<NavMobileProps> = ({
-  data = NAVIGATION_DEMO,
   onClickClose,
 }) => {
+  const scopedT = useScopedI18n("navigation")
+
+  const NAV: NavItemType[] = [
+    { // Home
+      id: ncNanoId(),
+      href: "/",
+      name: scopedT("home"),
+      // type: "dropdown",
+      // isNew: true,
+    },
+    { // Tours
+      id: ncNanoId(),
+      href: "/tours",
+      name: scopedT("tours.label"),
+      type: "dropdown",
+      children: [
+        {
+          id: ncNanoId(),
+          href: "/tours/abroad",
+          name: scopedT("tours.abroad"),
+        },
+        {
+          id: ncNanoId(),
+          href: "/tours/domestic",
+          name: scopedT("tours.inCountry"),
+        }
+      ],
+    },
+    { // Services
+      id: ncNanoId(),
+      href: "/services",
+      name: scopedT("services"),
+      // type: "dropdown",
+      // isNew: true,
+    },
+    { // About
+      id: ncNanoId(),
+      href: "/about-us",
+      name: scopedT("about.label"),
+      type: "dropdown",
+      // isNew: true,
+      children: [
+        {
+          id: ncNanoId(),
+          href: "/about-us",
+          name: scopedT("about.us"),
+        },
+        {
+          id: ncNanoId(),
+          href: "/about-contact",
+          name: scopedT("about.contact"),
+        },
+      ],
+    },
+  ]
   const _renderMenuChild = (item: NavItemType) => {
     return (
       <ul className="nav-mobile-sub-menu pl-6 pb-1 text-base">
@@ -125,7 +183,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         </span>
       </div>
       <ul className="flex flex-col py-6 px-2 space-y-1">
-        {data.map(_renderItem)}
+        {NAV.map(_renderItem)}
       </ul>
       <div className="flex items-center justify-between py-6 px-5">
         <a
