@@ -52,12 +52,12 @@ const LangDropdown: FC<LangDropdownProps> = ({
     const locale = useCurrentLocale();
 
     return (
-      <div className="grid gap-8 lg:grid-cols-3 cursor-pointer">
+      <div className="grid gap-7 lg:grid-cols-3 cursor-pointer">
         {headerLanguage.map((item, index) => (
           <a
             key={index}
             onClick={() => {
-              changeLocale(item.id as "en" | "az");
+              changeLocale(item.id as "az" | "en" | "ru");
               setActiveLanguage(item.id);
               close();
             }}

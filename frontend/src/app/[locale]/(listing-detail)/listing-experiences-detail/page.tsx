@@ -19,12 +19,13 @@ import StayDatesRangeInput from "./StayDatesRangeInput";
 import GuestsInput from "./GuestsInput";
 import SectionDateRange from "../SectionDateRange";
 import { Route } from "next";
+import { useI18n } from "locales/client";
 
-export interface ListingExperiencesDetailPageProps {}
+export interface ListingExperiencesDetailPageProps { }
 
 const ListingExperiencesDetailPage: FC<
   ListingExperiencesDetailPageProps
-> = ({}) => {
+> = ({ }) => {
   const thisPathname = usePathname();
   const router = useRouter();
 
@@ -32,7 +33,9 @@ const ListingExperiencesDetailPage: FC<
     router.push(`${thisPathname}/?modal=PHOTO_TOUR_SCROLLABLE` as Route);
   };
 
-  const renderSection1 = () => {
+
+  const renderSection1 = async () => {
+    const t = await useI18n();
     return (
       <div className="listingSection__wrap !space-y-6">
         {/* 1 */}
@@ -43,6 +46,7 @@ const ListingExperiencesDetailPage: FC<
 
         {/* 2 */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+            {t('hero')}
           Trang An Boat Tour & Mua Cave
         </h2>
 
@@ -444,9 +448,8 @@ const ListingExperiencesDetailPage: FC<
           {PHOTOS.filter((_, i) => i >= 1 && i < 4).map((item, index) => (
             <div
               key={index}
-              className={`relative rounded-md sm:rounded-xl overflow-hidden ${
-                index >= 2 ? "block" : ""
-              }`}
+              className={`relative rounded-md sm:rounded-xl overflow-hidden ${index >= 2 ? "block" : ""
+                }`}
             >
               <div className="aspect-w-4 aspect-h-3">
                 <Image

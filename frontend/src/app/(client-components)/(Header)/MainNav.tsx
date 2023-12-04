@@ -17,7 +17,7 @@ const MainNav: FC<MainNavProps> = ({ className = "" }) => {
     <div className={`nc-MainNav1 relative z-10 ${className}`}>
       <div className="px-4 lg:container py-4 relative flex justify-between items-center">
         <div className="hidden md:flex justify-start flex-1 space-x-4 sm:space-x-10">
-          <Logo className="w-24 self-center" />
+          <Logo className="w-20 self-center" />
           <Navigation />
         </div>
 
