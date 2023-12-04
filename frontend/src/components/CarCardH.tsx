@@ -42,7 +42,7 @@ const CarCardH: FC<CarCardHProps> = ({ className = "", data = DEMO_DATA }) => {
             sizes="(max-width: 640px) 100vw, 300px"
           />
         </div>
-        <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" />
+        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" /> */}
         {saleOff && <SaleOffBadge className="absolute left-3 top-3" />}
       </div>
     );

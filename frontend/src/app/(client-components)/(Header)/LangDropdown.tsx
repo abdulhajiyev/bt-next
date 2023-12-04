@@ -40,8 +40,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
   className = "hidden md:flex",
 }) => {
   const [cookies, setCookie] = useCookies(['Next-Locale']);
-  const [activeLanguage, setActiveLanguage] = useState<string>(cookies['Next-Locale'] || 'en'); // Default to English
-
+  const [activeLanguage, setActiveLanguage] = useState<string>(cookies['Next-Locale'] || 'az');
   useEffect(() => {
     // Update the cookie when activeLanguage changes
     setCookie('Next-Locale', activeLanguage, { path: '/' });
@@ -61,11 +60,10 @@ const LangDropdown: FC<LangDropdownProps> = ({
               setActiveLanguage(item.id);
               close();
             }}
-            className={`flex items-center justify-center p-1 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${
-              activeLanguage === item.id
-                ? "bg-gray-100 dark:bg-gray-700"
-                : "opacity-80"
-            }`}
+            className={`flex items-center justify-center p-1 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${activeLanguage === item.id
+              ? "bg-gray-100 dark:bg-gray-700"
+              : "opacity-80"
+              }`}
           >
             <div className="">
               <p className="text-sm font-medium">
@@ -85,12 +83,12 @@ const LangDropdown: FC<LangDropdownProps> = ({
           <>
             <Popover.Button
               className={`
-                ${open ? "" : "text-opacity-80"} group self-center h-10 sm:h-12 px-3 py-1.5 inline-flex items-center text-sm text-gray-800 dark:text-neutral-200 font-medium hover:text-opacity-100 focus:outline-none `}
+              ${open ? "" : "text-opacity-80"} group self-center h-10 sm:h-12 px-3 py-1.5 inline-flex items-center text-sm text-gray-800 dark:text-neutral-200 font-medium hover:text-opacity-100 focus:outline-none `}
             >
               <GlobeAltIcon className="w-5 h-5 opacity-80" />
               <ChevronDownIcon
                 className={`${open ? "-rotate-180" : "text-opacity-70"}
-                  ml-1 h-4 w-4  group-hover:text-opacity-80 transition ease-in-out duration-150`}
+                ml-1 h-4 w-4 group-hover:text-opacity-80 transition ease-in-out duration-150`}
                 aria-hidden="true"
               />
             </Popover.Button>

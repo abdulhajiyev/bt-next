@@ -47,7 +47,7 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
           galleryImgs={galleryImgs}
           href={href}
         />
-        <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" />
+        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" /> */}
         {saleOff && <SaleOffBadge className="absolute left-3 top-3" />}
       </div>
     );
