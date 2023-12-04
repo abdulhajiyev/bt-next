@@ -16,9 +16,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Chisfis - Booking online React Next Template",
-  description: "Booking online & rental online React Next Template",
-  keywords: "Chisfis, Booking online, React Next Template",
+  title: "B&T - Booking online",
+  description: "Booking online",
+  keywords: "Booking online",
   
 };
 

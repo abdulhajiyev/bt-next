@@ -1,17 +1,17 @@
 "use client";
 
-import React from "react";
-import ButtonClose from "@/shared/ButtonClose";
-import Logo from "@/shared/Logo";
-import { Disclosure } from "@headlessui/react";
-import { NavItemType } from "./NavigationItem";
-import { NAVIGATION_DEMO } from "@/data/navigation";
-import ButtonPrimary from "@/shared/ButtonPrimary";
-import SocialsList from "@/shared/SocialsList";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import SwitchDarkMode from "@/shared/SwitchDarkMode";
-import Link from "next/link";
 import LangDropdown from "@/app/(client-components)/(Header)/LangDropdown";
+import { NAVIGATION_DEMO } from "@/data/navigation";
+import ButtonClose from "@/shared/ButtonClose";
+import ButtonPrimary from "@/shared/ButtonPrimary";
+import Logo from "@/shared/Logo";
+import SocialsList from "@/shared/SocialsList";
+import SwitchDarkMode from "@/shared/SwitchDarkMode";
+import { Disclosure } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+import React from "react";
+import { NavItemType } from "./NavigationItem";
 
 export interface NavMobileProps {
   data?: NavItemType[];
@@ -130,11 +130,11 @@ const NavMobile: React.FC<NavMobileProps> = ({
       <div className="flex items-center justify-between py-6 px-5">
         <a
           className="inline-block"
-          href="https://themeforest.net/item/chisfis-online-booking-nextjs-template/43399526"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ButtonPrimary>Get Template</ButtonPrimary>
+          <ButtonPrimary>BtnPrimary</ButtonPrimary>
         </a>
 
         <LangDropdown

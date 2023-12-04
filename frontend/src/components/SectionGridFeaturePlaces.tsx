@@ -1,7 +1,7 @@
-import React, { FC, ReactNode } from "react";
 import { DEMO_STAY_LISTINGS } from "@/data/listings";
 import { StayDataType } from "@/data/types";
 import ButtonPrimary from "@/shared/ButtonPrimary";
+import React, { FC, ReactNode } from "react";
 import HeaderFilter from "./HeaderFilter";
 import StayCard from "./StayCard";
 import StayCard2 from "./StayCard2";
@@ -24,7 +24,7 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
   stayListings = DEMO_DATA,
   gridClass = "",
   heading = "Featured places to stay",
-  subHeading = "Popular places to stay that Chisfis recommends for you",
+  subHeading = "Popular places to stay that B&T recommends for you",
   headingIsCenter,
   tabs = ["New York", "Tokyo", "Paris", "London"],
   cardType = "card2",

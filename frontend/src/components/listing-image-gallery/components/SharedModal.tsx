@@ -1,19 +1,19 @@
 "use client";
 
+import { variants } from "@/utils/animationVariants";
 import {
-  ArrowDownTrayIcon,
-  ArrowTopRightOnSquareIcon,
-  ArrowUturnLeftIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  XMarkIcon,
+    ArrowDownTrayIcon,
+    ArrowTopRightOnSquareIcon,
+    ArrowUturnLeftIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { DEMO_IMAGE } from "../ListingImageGallery";
-import { variants } from "@/utils/animationVariants";
 import downloadPhoto from "../utils/downloadPhoto";
 import { range } from "../utils/range";
 import type { ListingGalleryImage } from "../utils/types";
@@ -89,7 +89,7 @@ export default function SharedModal({
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
                   priority
-                  alt="Chisfis listing gallery"
+                  alt="B&T listing gallery"
                   onLoad={() => setLoaded(true)}
                   sizes="(max-width: 1025px) 100vw, 1280px"
                 />
@@ -138,7 +138,7 @@ export default function SharedModal({
                   </a>
                 ) : (
                   <a
-                    href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20pic%20from%20Chisfis%20!%0A%0A${location.href}`}
+                    href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20pic%20from%20B&T%20!%0A%0A${location.href}`}
                     className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
                     target="_blank"
                     title="Open fullsize version"
