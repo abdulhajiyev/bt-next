@@ -12,7 +12,7 @@ export interface SectionHeroProps {
 const SectionHero: FC<SectionHeroProps> = async ({ className = "" }) => {
 
   const t = await getI18n()
-  const scopedT = await getScopedI18n('hello')
+  // const scopedT = await getScopedI18n('hello')
 
   return (
     <div
