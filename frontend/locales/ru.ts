@@ -16,4 +16,12 @@ export default {
       contact: 'Свяжитесь с нами',
     },
   },
+  tours: {
+    abroad: {
+      doha: {
+        name: 'Doha',
+        description: 'Представляем вам тур в Доху, который согреет вашу душу в холодные зимние дни!',
+      }
+    }
+  },
 } as const;

@@ -16,4 +16,12 @@ export default {
       contact: 'Contact us',
     },
   },
+  tours: {
+    abroad: {
+      doha: {
+        name: 'Doha',
+        description: 'We present to you the Doha tour that will warm your soul on cold winter days!',
+      }
+    }
+  },
 } as const;

@@ -27,18 +27,18 @@ const SectionHero: FC<SectionHeroProps> = async ({ className = "" }) => {
             Accompanying us, you have a trip full of experiences. With B&T,
             booking accommodation, resort villas, hotels
           </span>
-          <ButtonPrimary href="/listing-stay-map" sizeClass="px-5 py-4 sm:px-7">
+          {/* <ButtonPrimary href="/listing-stay-map" sizeClass="px-5 py-4 sm:px-7">
             Start your search
-          </ButtonPrimary>
+          </ButtonPrimary> */}
         </div>
         <div className="flex-grow">
           <Image className="w-full" src={imagePng} alt="hero" priority />
         </div>
       </div>
 
-      <div className="hidden lg:block z-10 mb-12 lg:mb-0 lg:-mt-40 w-full">
+      {/* <div className="hidden lg:block z-10 mb-12 lg:mb-0 lg:-mt-40 w-full">
         <HeroSearchForm />
-      </div>
+      </div> */}
     </div>
   );
 };

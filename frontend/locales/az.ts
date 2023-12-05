@@ -16,4 +16,12 @@ export default {
       contact: 'Bizimlə əlaqə saxlayın',
     },
   },
+  tours: {
+    abroad: {
+      doha: {
+        name: 'Doha',
+        description: 'Soyuq qış günlərində ruhunuzu isidəcək Doha turunu sizə təqdim edirik!',
+      }
+    }
+  },
 } as const;
