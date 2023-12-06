@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  HeartIcon,
-  MagnifyingGlassIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/outline";
+import { FaWhatsapp, FaHouse, FaPlaneDeparture } from "react-icons/fa6";
 import React, { useEffect, useRef } from "react";
 import { PathName } from "@/routers/types";
 import MenuBar from "@/shared/MenuBar";
@@ -27,17 +23,17 @@ const NAV: NavItem[] = [
   {
     name: "Explore",
     link: "/",
-    icon: MagnifyingGlassIcon,
+    icon: FaHouse,
   },
   {
-    name: "Wishlists",
-    link: "/account-savelists",
-    icon: HeartIcon,
+    name: "WhatsApp",
+    link: "https://wa.me/994502009999",
+    icon: FaWhatsapp,
   },
   {
-    name: "Log in",
-    link: "/account",
-    icon: UserCircleIcon,
+    name: "Tours",
+    link: "/tours",
+    icon: FaPlaneDeparture,
   },
   {
     name: "Menu",

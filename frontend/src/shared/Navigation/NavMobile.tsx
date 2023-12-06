@@ -79,7 +79,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         },
         {
           id: ncNanoId(),
-          href: "/about-contact",
+          href: "/contact",
           name: scopedT("about.contact"),
         },
       ],
@@ -187,13 +187,12 @@ const NavMobile: React.FC<NavMobileProps> = ({
       </ul>
       <div className="flex items-center justify-between py-6 px-5">
         <a
-          className="inline-block"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ButtonPrimary>BtnPrimary</ButtonPrimary>
-        </a>
+              href="https://wa.me/994502009999"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ButtonPrimary icon="lab la-whatsapp">+994502009999</ButtonPrimary>
+            </a>
 
         <LangDropdown
           className="flex"

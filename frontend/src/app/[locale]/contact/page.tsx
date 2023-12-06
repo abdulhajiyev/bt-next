@@ -6,24 +6,27 @@ import Input from "@/shared/Input";
 import Textarea from "@/shared/Textarea";
 import ButtonPrimary from "@/shared/ButtonPrimary";
 
-export interface PageContactProps {}
+export interface PageContactProps { }
 
 const info = [
   {
     title: "🗺 ADDRESS",
-    desc: "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter",
+    desc: `Baku city, Aşıq Ali, 4, Narimanov, AZ1072 "Sheher Baghları" residence.`,
+    link: 'https://goo.gl/maps/bXFhQFutRBwkWbCM7'
   },
   {
     title: "💌 EMAIL",
-    desc: "nc.example@example.com",
+    desc: "info@bookandtravel.com",
+    link: "mailto:info@bookandtravel.com"
   },
   {
     title: "☎ PHONE",
-    desc: "000-123-456-7890",
+    desc: "+994502009999",
+    link: 'tel:+994502009999'
   },
 ];
 
-const PageContact: FC<PageContactProps> = ({}) => {
+const PageContact: FC<PageContactProps> = ({ }) => {
   return (
     <div className={`nc-PageContact overflow-hidden`}>
       <div className="mb-24 lg:mb-32">
@@ -38,9 +41,15 @@ const PageContact: FC<PageContactProps> = ({}) => {
                   <h3 className="uppercase font-semibold text-sm dark:text-neutral-200 tracking-wider">
                     {item.title}
                   </h3>
-                  <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-                    {item.desc}
-                  </span>
+                  {item.link ? (
+                    <a href={item.link} className="hover:underline block mt-2 text-neutral-500 dark:text-neutral-400">
+                      {item.desc}
+                    </a>
+                  ) : (
+                    <p className="block mt-2 text-neutral-500 dark:text-neutral-400">
+                      {item.desc}
+                    </p>
+                  )}
                 </div>
               ))}
               <div>
@@ -56,7 +65,7 @@ const PageContact: FC<PageContactProps> = ({}) => {
                   <Label>Full name</Label>
 
                   <Input
-                    placeholder="Example Doe"
+                    placeholder="Name"
                     type="text"
                     className="mt-1"
                   />
@@ -66,7 +75,7 @@ const PageContact: FC<PageContactProps> = ({}) => {
 
                   <Input
                     type="email"
-                    placeholder="example@example.com"
+                    placeholder="bookandtravel@example.com"
                     className="mt-1"
                   />
                 </label>
@@ -82,11 +91,6 @@ const PageContact: FC<PageContactProps> = ({}) => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* OTHER SECTIONS */}
-      <div className="container">
-        <SectionSubscribe2 className="pb-24 lg:pb-32" />
       </div>
     </div>
   );

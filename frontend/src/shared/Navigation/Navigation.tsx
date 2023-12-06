@@ -48,19 +48,18 @@ const Navigation = () => {
     },
     { // About
       id: ncNanoId(),
-      href: "/about-us",
       name: scopedT("about.label"),
       type: "dropdown",
       // isNew: true,
       children: [
         {
           id: ncNanoId(),
-          href: "/about-us",
+          href: "/about",
           name: scopedT("about.us"),
         },
         {
           id: ncNanoId(),
-          href: "/about-contact",
+          href: "/contact",
           name: scopedT("about.contact"),
         },
       ],
