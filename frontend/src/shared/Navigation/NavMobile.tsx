@@ -62,7 +62,6 @@ const NavMobile: React.FC<NavMobileProps> = ({
       id: ncNanoId(),
       href: "/services",
       name: scopedT("services"),
-      // type: "dropdown",
       // isNew: true,
     },
     { // About
@@ -134,12 +133,20 @@ const NavMobile: React.FC<NavMobileProps> = ({
         as="li"
         className="text-neutral-900 dark:text-white"
       >
-        <div
-          className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer"
+        <Link
+          className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+          href={{
+            pathname: item.href || undefined,
+          }}
         >
           <Disclosure.Button as="span" className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}>
             {item.name}
           </Disclosure.Button>
+          {/* <span
+            className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}
+          >
+            {item.name}
+          </span> */}
           {item.children && (
             <span className="flex-1 flex" onClick={(e) => e.preventDefault()}>
               <Disclosure.Button
@@ -153,7 +160,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
               </Disclosure.Button>
             </span>
           )}
-        </div>
+        </Link>
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}
