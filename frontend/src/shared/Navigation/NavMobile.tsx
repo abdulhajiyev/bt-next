@@ -37,7 +37,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
     },
     { // Tours
       id: ncNanoId(),
-      href: "/tours",
+      // href: "/tours",
       name: scopedT("tours.label"),
       type: "dropdown",
       children: [
@@ -50,6 +50,11 @@ const NavMobile: React.FC<NavMobileProps> = ({
           id: ncNanoId(),
           href: "/tours/domestic",
           name: scopedT("tours.inCountry"),
+        },
+        {
+          id: ncNanoId(),
+          href: "/tours",
+          name: scopedT("tours.all"),
         }
       ],
     },
@@ -129,17 +134,12 @@ const NavMobile: React.FC<NavMobileProps> = ({
         as="li"
         className="text-neutral-900 dark:text-white"
       >
-        <Link
-          className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
-          href={{
-            pathname: item.href || undefined,
-          }}
+        <div
+          className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer"
         >
-          <span
-            className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}
-          >
+          <Disclosure.Button as="span" className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}>
             {item.name}
-          </span>
+          </Disclosure.Button>
           {item.children && (
             <span className="flex-1 flex" onClick={(e) => e.preventDefault()}>
               <Disclosure.Button
@@ -153,7 +153,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
               </Disclosure.Button>
             </span>
           )}
-        </Link>
+        </div>
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}

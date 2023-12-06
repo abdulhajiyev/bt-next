@@ -19,7 +19,6 @@ const Navigation = () => {
     },
     { // Tours
       id: ncNanoId(),
-      href: "/tours",
       name: scopedT("tours.label"),
       type: "dropdown",
       children: [
@@ -32,6 +31,11 @@ const Navigation = () => {
           id: ncNanoId(),
           href: "/tours/domestic",
           name: scopedT("tours.inCountry"),
+        },
+        {
+          id: ncNanoId(),
+          href: "/tours",
+          name: scopedT("tours.all"),
         }
       ],
     },
@@ -62,6 +66,7 @@ const Navigation = () => {
       ],
     },
   ]
+  
   return (
     <ul className="nc-Navigation hidden lg:flex lg:flex-wrap lg:space-x-1 relative">
       {NAV.map((item) => (
