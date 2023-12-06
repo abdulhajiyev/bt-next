@@ -66,7 +66,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
     },
     { // About
       id: ncNanoId(),
-      href: "/about-us",
+      // href: "/about-us",
       name: scopedT("about.label"),
       type: "dropdown",
       // isNew: true,
@@ -127,46 +127,57 @@ const NavMobile: React.FC<NavMobileProps> = ({
   };
 
   const _renderItem = (item: NavItemType, index: number) => {
+    const isLink = !!item.href; // Check if href is present
+
+    const itemContent = (
+      <Disclosure.Button
+        as="span"
+        className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}
+      >
+        {item.name}
+      </Disclosure.Button>
+    );
+
     return (
       <Disclosure
         key={item.id}
         as="li"
         className="text-neutral-900 dark:text-white"
       >
-        <Link
-          className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
-          href={{
-            pathname: item.href || undefined,
-          }}
-        >
-          <Disclosure.Button as="span" className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}>
-            {item.name}
-          </Disclosure.Button>
-          {/* <span
-            className={`py-2.5 pr-3 ${!item.children ? "block w-full" : ""}`}
+        {isLink ? (
+          <Link
+            className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+            href={{ pathname: item.href || undefined }}
           >
-            {item.name}
-          </span> */}
-          {item.children && (
-            <span className="flex-1 flex" onClick={(e) => e.preventDefault()}>
-              <Disclosure.Button
-                as="span"
-                className="py-2.5 flex items-center justify-end flex-1 "
-              >
-                <ChevronDownIcon
-                  className="ml-2 h-4 w-4 text-neutral-500"
-                  aria-hidden="true"
-                />
-              </Disclosure.Button>
-            </span>
-          )}
-        </Link>
+            {itemContent}
+          </Link>
+        ) : (
+          <div className="flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg cursor-pointer">
+            {itemContent}
+            {item.children && (
+              <span className="flex-1 flex" onClick={(e) => e.preventDefault()}>
+                <Disclosure.Button
+                  as="span"
+                  className="py-2.5 flex items-center justify-end flex-1 "
+                >
+                  <ChevronDownIcon
+                    className="ml-2 h-4 w-4 text-neutral-500"
+                    aria-hidden="true"
+                  />
+                </Disclosure.Button>
+              </span>
+            )}
+          </div>
+        )}
+
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}
       </Disclosure>
     );
   };
+
+
 
   return (
     <div className="overflow-y-auto w-full h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-white dark:bg-neutral-900 divide-y-2 divide-neutral-100 dark:divide-neutral-800">
@@ -194,12 +205,12 @@ const NavMobile: React.FC<NavMobileProps> = ({
       </ul>
       <div className="flex items-center justify-between py-6 px-5">
         <a
-              href="https://wa.me/994502009999"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ButtonPrimary icon="lab la-whatsapp">+994502009999</ButtonPrimary>
-            </a>
+          href="https://wa.me/994502009999"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ButtonPrimary icon="lab la-whatsapp">+994502009999</ButtonPrimary>
+        </a>
 
         <LangDropdown
           className="flex"
