@@ -159,16 +159,16 @@ function PageHome() {
 
         {/* SECTION CARDS */}
         {/* <SectionSliderNewCategories categories={TOURS} /> */}
-        <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" heading="Popular destinations this month" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/>
+        {/* <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" heading="Popular destinations this month" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/> */}
 
-        <SectionGridFeaturePlaces cardType="card2" />
+        {/* <SectionGridFeaturePlaces cardType="card2" /> */}
 
-        <SectionSliderNewCategories
+        {/* <SectionSliderNewCategories
           heading="Explore by types of stays"
           subHeading="Explore houses based on 10 types of stays"
           categoryCardType="card5"
           itemPerRow={5}
-        />
+        /> */}
 
       </div>
     </main>
