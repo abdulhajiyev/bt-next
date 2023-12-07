@@ -16,6 +16,7 @@ export default {
       us: 'О компании B&T',
       contact: 'Свяжитесь с нами',
     },
+    menu: 'Меню'
   },
   tours: {
     abroad: {

@@ -8,6 +8,8 @@ import isInViewport from "@/utils/isInViewport";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { useScopedI18n } from "locales/client";
+
 let WIN_PREV_POSITION = 0;
 if (typeof window !== "undefined") {
   WIN_PREV_POSITION = window.pageYOffset;
@@ -19,29 +21,30 @@ interface NavItem {
   icon: any;
 }
 
-const NAV: NavItem[] = [
-  {
-    name: "Explore",
-    link: "/",
-    icon: FaHouse,
-  },
-  {
-    name: "WhatsApp",
-    link: "https://wa.me/994502009999",
-    icon: FaWhatsapp,
-  },
-  {
-    name: "Tours",
-    link: "/tours",
-    icon: FaPlaneDeparture,
-  },
-  {
-    name: "Menu",
-    icon: MenuBar,
-  },
-];
-
 const FooterNav = () => {
+  const scopedT = useScopedI18n("navigation");
+  const NAV: NavItem[] = [
+    {
+      name: scopedT("home"),
+      link: "/",
+      icon: FaHouse,
+    },
+    {
+      name: "WhatsApp",
+      link: "https://wa.me/994502009999",
+      icon: FaWhatsapp,
+    },
+    {
+      name: scopedT("tours.label"),
+      link: "/tours",
+      icon: FaPlaneDeparture,
+    },
+    {
+      name: scopedT("menu"),
+      icon: MenuBar,
+    },
+  ];
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   const pathname = usePathname();

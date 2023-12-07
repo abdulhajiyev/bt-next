@@ -16,6 +16,7 @@ export default {
       us: 'About B&T',
       contact: 'Contact us',
     },
+    menu: 'Menu'
   },
   tours: {
     abroad: {

@@ -16,6 +16,7 @@ export default {
       us: 'B&T haqqında',
       contact: 'Bizimlə əlaqə saxlayın',
     },
+    menu: 'Menyu'
   },
   tours: {
     abroad: {
