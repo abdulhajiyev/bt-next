@@ -252,11 +252,25 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
 
   // ===================== MENU MAIN MENU =====================
   const renderMainItem = (item: NavItemType) => {
+    if (!item.href) {
+      return (
+        <p className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full cursor-pointer">
+          {item.name}
+          {item.type && (
+            <ChevronDownIcon
+              className="ml-1 -mr-1 h-4 w-4 text-neutral-400"
+              aria-hidden="true"
+            />
+          )}
+        </p>
+      );
+    }
+
     return (
       <Link
         rel="noopener noreferrer"
         className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
-        href={item.href || "/"}
+        href={item.href}
       >
         {item.name}
         {item.type && (

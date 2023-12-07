@@ -1,6 +1,7 @@
 // locales/az.ts
 export default {
-  hero: 'Otel, uçuş və təcrübələr',
+  hero: 'Yeni səyahətinizi kəşf edin',
+  herodesc: 'Unudulmaz səyahətlərə çıxın: Macəra pasportunuz sizi gözləyir! B&T ilə dünyanı kəşf edin - Hər məkan bir hekayə və hər təcrübə bir xatirədir',
   navigation: {
     home: 'Əsas səhifə',
     tours: {
@@ -24,4 +25,25 @@ export default {
       }
     }
   },
+  footer: {
+    termsAndPolicies: {
+      label: 'Şərtlər və siyasət',
+      privacyPolicy: 'Gizlilik siyasəti',
+      termsOfUse: 'İstifadə şərtləri',
+      accessibility: 'Əlverişlilik',
+      rewardSystemPolicy: 'Mükafat sistemi siyasəti',
+    },
+    help: {
+      label: 'Kömək',
+      support: 'Dəstək',
+      cancelBookings: 'Rezervasiyalarınızı ləğv edin',
+      useCoupon: 'Kupon istifadə et',
+      refundPolicies: 'Geri qaytarma qaydaları',
+      internationalTravelDocuments: 'Beynəlxalq səfər sənədləri',
+    },
+    contact: {
+      label: 'Bizimlə əlaqə saxlayın'
+    }
+  },
+
 } as const;
