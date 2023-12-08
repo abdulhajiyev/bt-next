@@ -10,16 +10,22 @@ import ButtonCircle from "@/shared/ButtonCircle";
 import ButtonPrimary from "@/shared/ButtonPrimary";
 import ButtonSecondary from "@/shared/ButtonSecondary";
 import Input from "@/shared/Input";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import LikeSaveBtns from "@/components/LikeSaveBtns";
 import StartRating from "@/components/StartRating";
-import { includes_demo, PHOTOS } from "./constant";
-import Image from "next/image";
+// import { PHOTOS } from "./constant";
+import Image, { StaticImageData } from "next/image";
 import StayDatesRangeInput from "./StayDatesRangeInput";
 import GuestsInput from "./GuestsInput";
 import SectionDateRange from "../SectionDateRange";
 import { Route } from "next";
-import { useI18n } from "locales/client";
+import ListingImageGallery from "@/components/listing-image-gallery/ListingImageGallery";
+
+import ist1 from '@/images/tours/istanbul/ist1.webp'
+import ist2 from '@/images/tours/istanbul/ist2.webp'
+import ist3 from '@/images/tours/istanbul/ist3.webp'
+import ist4 from '@/images/tours/istanbul/ist4.webp'
+import { ListingGalleryImage } from "@/components/listing-image-gallery/utils/types";
 
 export interface ListingExperiencesDetailPageProps { }
 
@@ -28,46 +34,51 @@ const ListingExperiencesDetailPage: FC<
 > = ({ }) => {
   const thisPathname = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const modal = searchParams?.get("modal");
+
+  const PHOTOS: string[] = [
+    "/frontend/public/ist1.webp",
+    "/frontend/public/ist1.webp",
+    "/frontend/public/ist1.webp",
+    "/frontend/public/ist1.webp",
+
+  ];
 
   const handleOpenModalImageGallery = () => {
     router.push(`${thisPathname}/?modal=PHOTO_TOUR_SCROLLABLE` as Route);
   };
+  const handleCloseModalImageGallery = () => {
+    let params = new URLSearchParams(document.location.search);
+    params.delete("modal");
+    router.push(`${thisPathname}/?${params.toString()}` as Route);
+  };
+
+  const imageGallery: ListingGalleryImage[] = [...PHOTOS].map(
+    (item, index): ListingGalleryImage => {
+      return {
+        id: index,
+        url: item,
+      };
+    }
+  );
 
 
-  const renderSection1 = async () => {
-    const t = await useI18n();
+
+
+  const renderSection1 = () => {
     return (
       <div className="listingSection__wrap !space-y-6">
-        {/* 1 */}
-        <div className="flex justify-between items-center">
-          <Badge color="pink" name="Specific Tour" />
-          <LikeSaveBtns />
-        </div>
-
         {/* 2 */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-            {t('hero')}
-          Trang An Boat Tour & Mua Cave
+          Travel to Istanbul!
         </h2>
 
         {/* 3 */}
         <div className="flex items-center space-x-4">
-          <StartRating />
-          <span>·</span>
           <span>
             <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
-          </span>
-        </div>
-
-        {/* 4 */}
-        <div className="flex items-center">
-          <Avatar hasChecked sizeClass="h-10 w-10" radius="rounded-full" />
-          <span className="ml-2.5 text-neutral-500 dark:text-neutral-400">
-            Hosted by{" "}
-            <span className="text-neutral-900 dark:text-neutral-200 font-medium">
-              Kevin Francis
-            </span>
+            <span className="ml-1"> Istanbul, Turkey</span>
           </span>
         </div>
 
@@ -77,18 +88,27 @@ const ListingExperiencesDetailPage: FC<
         {/* 6 */}
         <div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
           <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-clock text-2xl"></i>
-            <span className="">3.5 hours</span>
+            <i className="las la-hotel text-2xl"></i>
+            <span className="">4 nights</span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-user-friends text-2xl"></i>
-            <span className="">Up to 10 people</span>
+            <i className="las la-coffee text-2xl"></i>
+            <span className="">Breakfast</span>
+          </div>
+          {/* <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
+            <i className="las la-plane-departure text-2xl"></i>
+            <span className="">Air ticket</span>
+          </div> */}
+          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
+            <i className="las la-shuttle-van text-2xl"></i>
+            <span className="">Transfer</span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-language text-2xl"></i>
-            <span className="">English, VietNames</span>
+            <i className="las la-user-shield text-2xl"></i>
+            <span className="">Insurance</span>
           </div>
         </div>
+
       </div>
     );
   };
@@ -145,6 +165,14 @@ const ListingExperiencesDetailPage: FC<
       </div>
     );
   };
+
+  const includes_demo = [
+    { name: "Set Menu Lunch on boat" },
+    { name: "Express Bus From Hanoi To Halong and Return" },
+    { name: "Mineral Water On Express Bus" },
+    { name: "Kayak or Bamboo Boat. Life Jacket." },
+    { name: "Halong Bay Entrance Ticket" },
+  ];
 
   const renderSection3 = () => {
     return (
@@ -501,6 +529,11 @@ const ListingExperiencesDetailPage: FC<
           <div className="sticky top-28">{renderSidebar()}</div>
         </div>
       </main>
+      <ListingImageGallery
+        isShowModal={modal === "PHOTO_TOUR_SCROLLABLE"}
+        onClose={handleCloseModalImageGallery}
+        images={imageGallery}
+      />
     </div>
   );
 };
