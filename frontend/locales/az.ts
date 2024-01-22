@@ -43,7 +43,16 @@ export default {
       internationalTravelDocuments: 'Beynəlxalq səfər sənədləri',
     },
     contact: {
-      label: 'Bizimlə əlaqə saxlayın'
+      label: 'Bizimlə əlaqə saxlayın',
+      contact: 'Əlaqə',
+      address: 'Ünvan',
+      phone: 'Telefon',
+      email: 'Email',
+      socials: 'Sosial şəbəkələr',
+      fullName: 'Ad və soyad',
+      emailAddress: 'Email ünvanı',
+      message: 'Mesaj',
+      send: 'Mesaj göndər',
     }
   },
 

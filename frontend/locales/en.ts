@@ -43,7 +43,16 @@ export default {
       internationalTravelDocuments: 'International Travel Documents',
     },
     contact: {
-      label: 'Contact us'
+      label: 'Contact us',
+      contact: 'Contact',
+      address: 'Address',
+      phone: 'Phone',
+      email: 'Email',
+      socials: 'Socials',
+      fullName: 'Full name',
+      emailAddress: 'Email address',
+      message: 'Message',
+      send: 'Send Message',
     }
   },
 
