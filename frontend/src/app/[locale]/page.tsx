@@ -18,16 +18,15 @@ import SectionSliderTours from "@/components/SectionSliderTours";
 const TOURS: TaxonomyType[] = [
 	{
 		id: "1",
-		href: "/tours/antalya",
-		name: "Antalya",
+		href: "/tours/domestic/shusha",
+		name: "Shusha",
 		taxonomy: "category",
 		count: 188288,
-		thumbnail:
-			"https://images.pexels.com/photos/2767815/pexels-photo-2767815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+		thumbnail: "https://shusha.gov.az/uploads/fsfwf.png",
 	},
 	{
 		id: "2",
-		href: "/tours/istanbul",
+		href: "/tours/abroad/istanbul",
 		name: "Istanbul",
 		taxonomy: "category",
 		count: 188288,
@@ -157,9 +156,9 @@ function PageHome() {
 				{/* MAIN HERO */}
 				<SectionHero className="pt-10 lg:pt-16 lg:pb-16" />
 
-				{/* SECTION CARDS */}
-				{/* <SectionSliderNewCategories categories={TOURS} /> */}
-				{/* <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" heading="Popular destinations this month" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/> */}
+        {/* SECTION CARDS */}
+        {/* <SectionSliderNewCategories categories={TOURS} /> */}
+        {/* <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" heading="Popular destinations this month" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/> */}
 
 				{/* <SectionGridFeaturePlaces cardType="card2" /> */}
 				{/* 
