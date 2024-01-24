@@ -15,9 +15,6 @@ import LikeSaveBtns from "@/components/LikeSaveBtns";
 import StartRating from "@/components/StartRating";
 // import { PHOTOS } from "./constant";
 import Image, { StaticImageData } from "next/image";
-import StayDatesRangeInput from "@/app/(listing-detail)/listing-experiences-detail/StayDatesRangeInput";
-import GuestsInput from "@/app/(listing-detail)/listing-experiences-detail/GuestsInput";
-import SectionDateRange from "@/app/(listing-detail)/SectionDateRange";
 import { Route } from "next";
 import ListingImageGallery from "@/components/listing-image-gallery/ListingImageGallery";
 
