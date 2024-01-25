@@ -48,6 +48,18 @@ const nextConfig = {
 			},
 		],
 	},
+	// output: { path: path.resolve(__dirname, "static") },
+	webpack: (config, options) => {
+		config.module.rules.push({
+			test: /\.pdf/,
+			type: "asset/resource",
+			generator: {
+				filename: "static/[hash][ext]",
+			},
+		});
+
+		return config;
+	},
 	eslint: {
 		// Warning: This allows production builds to successfully complete even if
 		// your project has ESLint errors.

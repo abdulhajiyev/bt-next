@@ -2,6 +2,7 @@
 import React from "react";
 import NavigationItem, { NavItemType } from "./NavigationItem";
 import { NAVIGATION_DEMO } from "@/data/navigation";
+import AboutPDF from "../../docs/About B&T.pdf"
 
 import { useI18n, useScopedI18n } from 'locales/client';
 import ncNanoId from "@/utils/ncNanoId";
@@ -18,7 +19,7 @@ const Navigation = () => {
 				// type: "dropdown",
 				// isNew: true,
 			},
-/* 			{
+			/* 			{
 				// Tours
 				id: ncNanoId(),
 				name: scopedT("tours.label"),
@@ -45,16 +46,16 @@ const Navigation = () => {
 				// Tours
 				id: ncNanoId(),
 				name: scopedT("tours.label"),
-        href: "/tours",
+				href: "/tours",
 			},
-			{
+/* 			{
 				// Services
 				id: ncNanoId(),
 				href: "/services",
 				name: scopedT("services"),
 				// type: "dropdown",
 				// isNew: true,
-			},
+			}, */
 			{
 				// About
 				id: ncNanoId(),
@@ -64,8 +65,9 @@ const Navigation = () => {
 				children: [
 					{
 						id: ncNanoId(),
-						href: "/about",
+						href: AboutPDF,
 						name: scopedT("about.us"),
+            download: true,
 					},
 					{
 						id: ncNanoId(),

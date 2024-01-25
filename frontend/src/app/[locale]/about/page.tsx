@@ -7,35 +7,23 @@ import BgGlassmorphism from "@/components/BgGlassmorphism";
 import BackgroundSection from "@/components/BackgroundSection";
 import SectionClientSay from "@/components/SectionClientSay";
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
+import AboutPDF from "../../../docs/About B&T.pdf";
+import { ReactPortal } from "react";
 
-export interface PageAboutProps {}
+export type PageAboutProps = {}
 
 const PageAbout: FC<PageAboutProps> = ({}) => {
-  return (
-    <div className={`nc-PageAbout overflow-hidden relative`}>
-      {/* ======== BG GLASS ======== */}
-      <BgGlassmorphism />
+	return (
+    <div className={`nc-PageAbout overflow-hidden relative flex items-center justify-center`}>
+			<iframe
+				src={AboutPDF}
+				style={{ width: "60%", height: "1080px"}}
+				title="About PDF"
+			/>
 
-      <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
-        <SectionHero
-          rightImg={rightImg}
-          heading="👋 About Us."
-          btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
-        />
 
-        {/* <SectionFounder /> */}
-        {/* <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay />
-        </div> */}
-
-        {/* <SectionStatistic /> */}
-
-        {/* <SectionSubscribe2 /> */}
-      </div>
-    </div>
-  );
+		</div>
+	);
 };
 
 export default PageAbout;

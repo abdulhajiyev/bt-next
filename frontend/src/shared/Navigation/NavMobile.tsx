@@ -14,6 +14,7 @@ import React from "react";
 import { NavItemType } from "./NavigationItem";
 import ncNanoId from "@/utils/ncNanoId";
 import { useScopedI18n } from "locales/client";
+import AboutPDF from "../../docs/About B&T.pdf";
 
 export interface NavMobileProps {
   // data?: NavItemType[];
@@ -28,18 +29,20 @@ const NavMobile: React.FC<NavMobileProps> = ({
   const scopedT = useScopedI18n("navigation")
 
   const NAV: NavItemType[] = [
-    { // Home
-      id: ncNanoId(),
-      href: "/",
-      name: scopedT("home"),
-      // type: "dropdown",
-      // isNew: true,
-    },
-    { // Tours
-      id: ncNanoId(),
-      href: "/tours",
-      name: scopedT("tours.label"),
-/*       type: "dropdown",
+			{
+				// Home
+				id: ncNanoId(),
+				href: "/",
+				name: scopedT("home"),
+				// type: "dropdown",
+				// isNew: true,
+			},
+			{
+				// Tours
+				id: ncNanoId(),
+				href: "/tours",
+				name: scopedT("tours.label"),
+				/*       type: "dropdown",
       children: [
         {
           id: ncNanoId(),
@@ -57,33 +60,36 @@ const NavMobile: React.FC<NavMobileProps> = ({
           name: scopedT("tours.all"),
         }
       ], */
-    },
-    { // Services
-      id: ncNanoId(),
-      href: "/services",
-      name: scopedT("services"),
-      // isNew: true,
-    },
-    { // About
-      id: ncNanoId(),
-      // href: "/about-us",
-      name: scopedT("about.label"),
-      type: "dropdown",
-      // isNew: true,
-      children: [
-        {
-          id: ncNanoId(),
-          href: "/about-us",
-          name: scopedT("about.us"),
-        },
-        {
-          id: ncNanoId(),
-          href: "/contact",
-          name: scopedT("about.contact"),
-        },
-      ],
-    },
-  ]
+			},
+			{
+				// Services
+				id: ncNanoId(),
+				href: "/services",
+				name: scopedT("services"),
+				// isNew: true,
+			},
+			{
+				// About
+				id: ncNanoId(),
+				// href: "/about-us",
+				name: scopedT("about.label"),
+				type: "dropdown",
+				// isNew: true,
+				children: [
+					{
+						id: ncNanoId(),
+						href: AboutPDF,
+						name: scopedT("about.us"),
+						download: true,
+					},
+					{
+						id: ncNanoId(),
+						href: "/contact",
+						name: scopedT("about.contact"),
+					},
+				],
+			},
+		];
   const _renderMenuChild = (item: NavItemType) => {
     return (
       <ul className="nav-mobile-sub-menu pl-6 pb-1 text-base">

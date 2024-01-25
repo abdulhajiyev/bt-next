@@ -1,5 +1,5 @@
 "use client";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
 import SocialsList from "@/shared/SocialsList";
 import Label from "@/components/Label";
@@ -29,6 +29,50 @@ const PageContact = ({ params }: { params: { slug: string } }) => {
 			link: "tel:+994502009999",
 		},
 	];
+
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		additionalNotes: "",
+	});
+
+	const handleInputChange = (e) => {
+		setFormData({
+			...formData,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		// Perform any additional form validation if needed
+
+		// Send form data to your API endpoint
+		try {
+			const response = await fetch("/api/send", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (response.ok) {
+				// Handle success, e.g., show a success message or redirect
+				console.log("Email sent successfully");
+				window.alert(
+					"Sorğunuz uğurla göndərildi. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.",
+				);
+			} else {
+				// Handle error, e.g., show an error message
+				console.error("Failed to send email");
+			}
+		} catch (error) {
+			console.error("Error:", error);
+		}
+	};
+
 	return (
 		<div className={"nc-PageContact overflow-hidden"}>
 			<div className="mb-24 lg:mb-32">
@@ -65,28 +109,46 @@ const PageContact = ({ params }: { params: { slug: string } }) => {
 							</div>
 						</div>
 						<div>
-							<form className="grid grid-cols-1 gap-6" action="#" method="post">
+							<form
+								className="grid grid-cols-1 gap-6"
+								action="#"
+								method="post"
+								onSubmit={handleSubmit}
+							>
 								<label className="block">
 									<Label>{t("contact.fullName")}</Label>
-
-									<Input placeholder="Name" type="text" className="mt-1" />
+									<Input
+										name="name"
+										placeholder="Name"
+										type="text"
+										className="mt-1"
+										value={formData.name}
+										onChange={handleInputChange}
+									/>
 								</label>
 								<label className="block">
 									<Label>{t("contact.emailAddress")}</Label>
-
 									<Input
+										name="email"
 										type="email"
 										placeholder="bookandtravel@example.com"
 										className="mt-1"
+										value={formData.email}
+										onChange={handleInputChange}
 									/>
 								</label>
 								<label className="block">
 									<Label>{t("contact.message")}</Label>
-
-									<Textarea className="mt-1" rows={6} />
+									<Textarea
+										name="additionalNotes"
+										className="mt-1"
+										rows={6}
+										value={formData.additionalNotes}
+										onChange={handleInputChange}
+									/>
 								</label>
 								<div>
-									<ButtonPrimary type="submit">
+									<ButtonPrimary onClick={handleSubmit} type="submit">
 										{t("contact.send")}
 									</ButtonPrimary>
 								</div>

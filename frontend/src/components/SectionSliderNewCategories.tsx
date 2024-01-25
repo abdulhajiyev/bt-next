@@ -174,7 +174,7 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 			<Heading 
       desc={subHeading}
       isCenter={sliderStyle === "style2"}>
-				"Turlar"
+				Turlar
 			</Heading>
 			<MotionConfig
 				transition={{

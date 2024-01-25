@@ -18,11 +18,18 @@ export async function POST(req, res) {
 		},
 	});
 
+	let text = "";
+	if (name) text += `Name: ${name}\n`;
+	if (phoneNumber) text += `Phone Number: ${phoneNumber}\n`;
+	if (email) text += `Email: ${email}\n`;
+	if (additionalNotes) text += `Additional Notes: ${additionalNotes}\n`;
+	if (tour) text += `Tour: ${tour}`;
+
 	const mailOptions = {
 		from: "sttc@bookand.travel",
 		to: "abdulhajiyev@gmail.com",
 		subject: "Test Form",
-		text: `Name: ${name}\nPhone Number: ${phoneNumber}\nEmail: ${email}\nAdditional Notes: ${additionalNotes}\nTour: ${tour}`,
+		text: text,
 	};
 
 	try {
