@@ -10,61 +10,71 @@ const Navigation = () => {
   const scopedT = useScopedI18n("navigation")
 
   const NAV: NavItemType[] = [
-    { // Home
-      id: ncNanoId(),
-      href: "/",
-      name: scopedT("home"),
-      // type: "dropdown",
-      // isNew: true,
-    },
-    { // Tours
-      id: ncNanoId(),
-      name: scopedT("tours.label"),
-      type: "dropdown",
-      children: [
-        {
-          id: ncNanoId(),
-          href: "/tours/abroad",
-          name: scopedT("tours.abroad"),
-        },
-        {
-          id: ncNanoId(),
-          href: "/tours/domestic",
-          name: scopedT("tours.inCountry"),
-        },
-        {
-          id: ncNanoId(),
-          href: "/tours",
-          name: scopedT("tours.all"),
-        }
-      ],
-    },
-    { // Services
-      id: ncNanoId(),
-      href: "/services",
-      name: scopedT("services"),
-      // type: "dropdown",
-      // isNew: true,
-    },
-    { // About
-      id: ncNanoId(),
-      name: scopedT("about.label"),
-      type: "dropdown",
-      // isNew: true,
-      children: [
-        {
-          id: ncNanoId(),
-          href: "/about",
-          name: scopedT("about.us"),
-        },
-        {
-          id: ncNanoId(),
-          href: "/contact",
-          name: scopedT("about.contact"),
-        },
-      ],
-    },
-  ]
+			{
+				// Home
+				id: ncNanoId(),
+				href: "/",
+				name: scopedT("home"),
+				// type: "dropdown",
+				// isNew: true,
+			},
+/* 			{
+				// Tours
+				id: ncNanoId(),
+				name: scopedT("tours.label"),
+				type: "dropdown",
+				children: [
+					{
+						id: ncNanoId(),
+						href: "/tours/abroad",
+						name: scopedT("tours.abroad"),
+					},
+					{
+						id: ncNanoId(),
+						href: "/tours/domestic",
+						name: scopedT("tours.inCountry"),
+					},
+					{
+						id: ncNanoId(),
+						href: "/tours",
+						name: scopedT("tours.all"),
+					},
+				],
+			}, */
+			{
+				// Tours
+				id: ncNanoId(),
+				name: scopedT("tours.label"),
+        href: "/tours",
+			},
+			{
+				// Services
+				id: ncNanoId(),
+				href: "/services",
+				name: scopedT("services"),
+				// type: "dropdown",
+				// isNew: true,
+			},
+			{
+				// About
+				id: ncNanoId(),
+				name: scopedT("about.label"),
+				type: "dropdown",
+				// isNew: true,
+				children: [
+					{
+						id: ncNanoId(),
+						href: "/about",
+						name: scopedT("about.us"),
+					},
+					{
+						id: ncNanoId(),
+						href: "/contact",
+						name: scopedT("about.contact"),
+					},
+				],
+			},
+		];
   
   return (
     <ul className="nc-Navigation hidden lg:flex lg:flex-wrap lg:space-x-1 relative">

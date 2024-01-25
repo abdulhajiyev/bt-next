@@ -19,64 +19,37 @@ const TOURS: TaxonomyType[] = [
 	{
 		id: "1",
 		href: "/tours/domestic/shusha",
-		name: "Shusha",
+		name: "Şuşa",
 		taxonomy: "category",
 		count: 188288,
 		thumbnail: "https://shusha.gov.az/uploads/fsfwf.png",
 	},
 	{
 		id: "2",
-		href: "/tours/abroad/istanbul",
-		name: "Istanbul",
+		href: "/tours/domestic/qabala",
+		name: "Qəbələ",
 		taxonomy: "category",
 		count: 188288,
 		thumbnail:
-			"https://images.pexels.com/photos/15081545/pexels-photo-15081545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+			"https://upload.wikimedia.org/wikipedia/commons/6/63/Q%C9%99b%C9%99l%C9%99_park-bulvar_kompleksi.jpg",
 	},
 	{
 		id: "3",
-		href: "/tours/samarkand",
-		name: "Samarkand",
+		href: "/tours/domestic/nakhchivan",
+		name: "Naxçıvan",
 		taxonomy: "category",
 		count: 188288,
 		thumbnail:
-			"https://images.pexels.com/photos/19227928/pexels-photo-19227928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+			"https://upload.wikimedia.org/wikipedia/commons/1/12/M%C3%B6m%C3%BCn%C9%99xatun_t%C3%BCrb%C9%99si_2018.jpg",
 	},
 	{
 		id: "4",
-		href: "/tours/dubai",
-		name: "Dubai",
+		href: "/tours/domestic/sugovushan",
+		name: "Suqovuşan",
 		taxonomy: "category",
 		count: 188288,
 		thumbnail:
-			"https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-	},
-	{
-		id: "5",
-		href: "/tours/athene",
-		name: "Athene",
-		taxonomy: "category",
-		count: 188288,
-		thumbnail:
-			"https://images.pexels.com/photos/164336/pexels-photo-164336.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-	},
-	{
-		id: "6",
-		href: "/listing-stay",
-		name: "Tokyo",
-		taxonomy: "category",
-		count: 188288,
-		thumbnail:
-			"https://images.pexels.com/photos/4151484/pexels-photo-4151484.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-	},
-	{
-		id: "7",
-		href: "/listing-stay",
-		name: "Maldives",
-		taxonomy: "category",
-		count: 188288,
-		thumbnail:
-			"https://images.pexels.com/photos/3250613/pexels-photo-3250613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+			"https://upload.wikimedia.org/wikipedia/commons/7/72/Suqovushan_1.jpg",
 	},
 ];
 
@@ -154,11 +127,11 @@ function PageHome() {
 
 			<div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
 				{/* MAIN HERO */}
-				<SectionHero className="pt-10 lg:pt-16 lg:pb-16" />
+				<SectionHero className="pt-10 lg:pt-16 lg:pb-0" />
 
         {/* SECTION CARDS */}
-        {/* <SectionSliderNewCategories categories={TOURS} /> */}
-        {/* <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" heading="Popular destinations this month" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/> */}
+        <SectionSliderNewCategories categories={TOURS} className="mt-0" />
+        {/* <SectionSliderTours tours={TOURS} sliderStyle="style1" tourCardType="card3" itemPerRow={4} subHeading="Discover the hottest travel spots this month and let your wanderlust guide you to unforgettable adventures"/> */}
 
 				{/* <SectionGridFeaturePlaces cardType="card2" /> */}
 				{/* 

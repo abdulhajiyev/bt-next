@@ -25,8 +25,14 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "shusha.gov.az",
-        port: "",
-        pathname: "/**",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "upload.wikimedia.org",
+				port: "",
+				pathname: "/**",
 			},
 			{
 				protocol: "https",

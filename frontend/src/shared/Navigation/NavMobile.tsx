@@ -37,9 +37,9 @@ const NavMobile: React.FC<NavMobileProps> = ({
     },
     { // Tours
       id: ncNanoId(),
-      // href: "/tours",
+      href: "/tours",
       name: scopedT("tours.label"),
-      type: "dropdown",
+/*       type: "dropdown",
       children: [
         {
           id: ncNanoId(),
@@ -56,7 +56,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
           href: "/tours",
           name: scopedT("tours.all"),
         }
-      ],
+      ], */
     },
     { // Services
       id: ncNanoId(),

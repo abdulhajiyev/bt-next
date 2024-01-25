@@ -9,6 +9,7 @@ import StayCard2 from "./StayCard2";
 // OTHER DEMO WILL PASS PROPS
 const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
 
+
 //
 export interface SectionGridFeaturePlacesProps {
   stayListings?: StayDataType[];
@@ -59,9 +60,9 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
       >
         {stayListings.map((stay) => renderCard(stay))}
       </div>
-      <div className="flex mt-16 justify-center items-center">
+      {/* <div className="flex mt-16 justify-center items-center">
         <ButtonPrimary loading>Show me more</ButtonPrimary>
-      </div>
+      </div> */}
     </div>
   );
 };
