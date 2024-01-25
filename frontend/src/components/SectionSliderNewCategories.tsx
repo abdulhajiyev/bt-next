@@ -12,7 +12,6 @@ import PrevBtn from "./PrevBtn";
 import NextBtn from "./NextBtn";
 import { variants } from "@/utils/animationVariants";
 import { useWindowSize } from "react-use";
-import { useScopedI18n } from "locales/client";
 
 export interface SectionSliderNewCategoriesProps {
 	className?: string;
@@ -113,7 +112,6 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [direction, setDirection] = useState(0);
 	const [numberOfItems, setNumberOfitem] = useState(0);
-	const t = useScopedI18n("navigation");
 
 	const windowWidth = useWindowSize().width;
 	useEffect(() => {
@@ -176,7 +174,7 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 			<Heading 
       desc={subHeading}
       isCenter={sliderStyle === "style2"}>
-				{t("tours.label")}
+				"Turlar"
 			</Heading>
 			<MotionConfig
 				transition={{
