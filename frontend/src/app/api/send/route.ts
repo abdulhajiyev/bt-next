@@ -13,7 +13,7 @@ export async function POST(req, res) {
 		port: 587,
 		secure: false,
 		auth: {
-			user: "sttc@bookand.travel",
+			user: "reservation@bookand.travel",
 			pass: "test12345.",
 		},
 	});
@@ -26,9 +26,9 @@ export async function POST(req, res) {
 	if (tour) text += `Tour: ${tour}`;
 
 	const mailOptions = {
-		from: "sttc@bookand.travel",
-		to: "abdulhajiyev@gmail.com",
-		subject: "Test Form",
+		from: "reservation@bookand.travel",
+		to: "info@bookand.travel",
+		subject: tour ? `New Reservation for ${tour}` : "Contact",
 		text: text,
 	};
 
