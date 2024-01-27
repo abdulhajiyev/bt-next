@@ -10,37 +10,49 @@ import Footer from "@/components/Footer";
 import FooterNav from "@/components/FooterNav";
 import { Metadata } from "next";
 import FacebookMessenger from "@/components/FacebookMessenger";
+import Script from "next/script";
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "B&T - Booking online",
-  description: "Booking online",
-  keywords: "Booking online",
-  
+	title: "B&T - Booking online",
+	description: "Booking online",
+	keywords: "Booking online",
 };
 
 export default function RootLayout({
-  children,
-  params,
+	children,
+	params,
 }: {
-  children: React.ReactNode;
-  params: any;
+	children: React.ReactNode;
+	params: any;
 }) {
-  return (
-    <html className={poppins.className}>
-      <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
-        <FacebookMessenger />
-        <ClientCommons />
-        {/* <SiteHeader /> */}
-        {children}
-        {/* <FooterNav /> */}
-        {/* <Footer /> */}
-      </body>
-    </html>
-  );
+	return (
+		<html className={poppins.className}>
+			<body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
+				<Script
+					id="ms_clarity"
+					strategy="afterInteractive"
+					dangerouslySetInnerHTML={{
+						__html: `
+          (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "kshwctnn12");`,
+					}}
+				/>
+				<FacebookMessenger />
+				<ClientCommons />
+				{/* <SiteHeader /> */}
+				{children}
+				{/* <FooterNav /> */}
+				{/* <Footer /> */}
+			</body>
+		</html>
+	);
 }
