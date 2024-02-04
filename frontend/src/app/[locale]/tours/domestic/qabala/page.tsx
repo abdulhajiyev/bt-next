@@ -26,6 +26,7 @@ import qabala4 from "@/images/tours/qabala/4.webp";
 import { ListingGalleryImage } from "@/components/listing-image-gallery/utils/types";
 import Label from "@/components/Label";
 import Textarea from "@/shared/Textarea";
+import { useScopedI18n } from "locales/client";
 
 export type ListingExperiencesDetailPageProps = {};
 
@@ -34,22 +35,16 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const modal = searchParams?.get("modal");
+	const t = useScopedI18n("tours.domestic.qabala");
+	const td = useScopedI18n("tours.default");
 
-	const PHOTOS: StaticImageData[] = [
-		qabala1,
-		qabala4,
-		qabala2,
-		qabala3,
-	];
+	const PHOTOS: StaticImageData[] = [qabala1, qabala4, qabala2, qabala3];
 
 	const includes_demo = [
-		{
-			name: "Bakı – Qəbələ – Bakı istiqaməti üzrə seçilmiş sinif üçün qatar bileti",
-		},
-		{ name: "Qəbələ Dəmiryol vağzalından otelə və geri dönüş transferi" },
-		{ name: "1 gecə oteldə qonaqlama" },
-		{ name: "1 dəfə oteldə səhər yeməyi" },
-		// { name: "Halong Bay Entrance Ticket" },
+		{ name: t("inc1") },
+		{ name: t("inc2") },
+		{ name: t("inc3") },
+		{ name: t("inc4") },
 	];
 
 	const handleOpenModalImageGallery = () => {
@@ -75,14 +70,14 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
 			<div className="listingSection__wrap !space-y-6">
 				{/* 2 */}
 				<h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-					2 Gün 1 Gecəlik Qəbələ-Bakı-Qəbələ turu (qatar ilə)
+					{t("description")}
 				</h2>
 
 				{/* 3 */}
 				<div className="flex items-center space-x-4">
 					<span>
 						<i className="las la-map-marker-alt" />
-						<span className="ml-1"> Qəbələ, Azərbaycan</span>
+						<span className="ml-1"> {t("location")}</span>
 					</span>
 				</div>
 
@@ -93,11 +88,11 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
 				<div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
 					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
 						<i className="las la-hotel text-2xl" />
-						<span className="">1 gecə</span>
+						<span className="">1 {td("night")}</span>
 					</div>
 					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
 						<i className="las la-coffee text-2xl" />
-						<span className="">Səhər yeməyi</span>
+						<span className="">{td("breakfast")}</span>
 					</div>
 					{/* <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
             <i className="las la-plane-departure text-2xl"></i>
@@ -105,11 +100,11 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
           </div> */}
 					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
 						<i className="las la-train text-2xl" />
-						<span className="">Transfer</span>
+						<span className="">{td("transfer")}</span>
 					</div>
 					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
 						<i className="las la-user-circle text-2xl" />
-						<span className="">Bələdçi xidməti</span>
+						<span className="">{td("guide")}</span>
 					</div>
 				</div>
 			</div>
@@ -119,39 +114,39 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
 	const renderSection2 = () => {
 		return (
 			<div className="listingSection__wrap">
-				<h2 className="text-2xl font-semibold">Tur proqrama daxildir</h2>
+				<h2 className="text-2xl font-semibold">{td("includedInTour")}</h2>
 				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 				<div className="text-neutral-6000 dark:text-neutral-300">
 					<p>
-						<b className="text-2xl">&#8544; Gün</b>
+						<b className="text-2xl">&#8544; {t("day")}</b>
 						<br />
 						<br />
-						&#9679; 07:00 - 28 May Dəmiryolu vağzalında görüş
+						&#9679; 07:00 - {t("day1_1")}
 						<br />
-						&#9679; 07:30 - Bakıdan Qəbələyə yoladüşmə
+						&#9679; 07:30 - {t("day1_2")}
 						<br />
-						&#9679; 10:50 - Qəbələyə çatma
+						&#9679; 10:50 - {t("day1_3")}
 						<br />
-						&#9679; 11:00 - Qəbələ dəmiryol vağzalından qarşılanma və otelə yola
+						&#9679; 11:00 - {t("day1_4")}
 						düşmək
 						<br />
-						&#9679; 11:30 - Otelə çatma
+						&#9679; 11:30 - {t("day1_5")}
 						<br />
-						&#9679; Qeydiyyat etdikdən sonra asudə vaxt
-						<br />
-						<br />
-						<b className="text-2xl">&#8545; Gün</b>
+						&#9679; {t("day1_6")}
 						<br />
 						<br />
-						&#9679; 10:00 - Oteldə səhər yeməyi və asudə vaxt
+						<b className="text-2xl">&#8545; {t("day")}</b>
 						<br />
-						&#9679; 18:00 - Qəbələ dəmiryol vağzalına yola düşmə
 						<br />
-						&#9679; 18:30 - Qəbələ dəmiryol vağzalına çatma
+						&#9679; 10:00 - {t("day2_1")}
 						<br />
-						&#9679; 19:00 - Qeydiyyat və yerləşmə
+						&#9679; 18:00 - {t("day2_2")}
 						<br />
-						&#9679; 19:30 - Qəbələ -Bakı
+						&#9679; 18:30 - {t("day2_3")}
+						<br />
+						&#9679; 19:00 - {t("day2_4")}
+						<br />
+						&#9679; 19:30 - {t("day2_5")}
 						<br />
 					</p>
 				</div>
@@ -163,233 +158,19 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({}) => {
 		return (
 			<div className="listingSection__wrap">
 				<div>
-					<h2 className="text-2xl font-semibold">Qiymətə daxildir</h2>
-					{/* <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-						Included in the price
-					</span> */}
+					<h2 className="text-2xl font-semibold">{td("includedInPrice")}</h2>
 				</div>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
+				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 				{/* 6 */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm text-neutral-700 dark:text-neutral-300 ">
 					{includes_demo
 						.filter((_, i) => i < 12)
 						.map((item) => (
 							<div key={item.name} className="flex items-center space-x-3">
-								<i className="las la-check-circle text-2xl"></i>
+								<i className="las la-check-circle text-2xl" />
 								<span>{item.name}</span>
 							</div>
 						))}
-				</div>
-			</div>
-		);
-	};
-
-	const renderSection5 = () => {
-		return (
-			<div className="listingSection__wrap">
-				{/* HEADING */}
-				<h2 className="text-2xl font-semibold">Host Information</h2>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-
-				{/* host */}
-				<div className="flex items-center space-x-4">
-					<Avatar
-						hasChecked
-						hasCheckedClass="w-4 h-4 -top-0.5 right-0.5"
-						sizeClass="h-14 w-14"
-						radius="rounded-full"
-					/>
-					<div>
-						<a className="block text-xl font-medium" href="##">
-							Kevin Francis
-						</a>
-						<div className="mt-1.5 flex items-center text-sm text-neutral-500 dark:text-neutral-400">
-							<StartRating />
-							<span className="mx-2">·</span>
-							<span> 12 places</span>
-						</div>
-					</div>
-				</div>
-
-				{/* desc */}
-				<span className="block text-neutral-6000 dark:text-neutral-300">
-					Providing lake views, The Symphony 9 Tam Coc in Ninh Binh provides
-					accommodation, an outdoor swimming pool, a bar, a shared lounge, a
-					garden and barbecue facilities...
-				</span>
-
-				{/* info */}
-				<div className="block text-neutral-500 dark:text-neutral-400 space-y-2.5">
-					<div className="flex items-center space-x-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={1.5}
-								d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-							/>
-						</svg>
-						<span>Joined in March 2016</span>
-					</div>
-					<div className="flex items-center space-x-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={1.5}
-								d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-							/>
-						</svg>
-						<span>Response rate - 100%</span>
-					</div>
-					<div className="flex items-center space-x-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={1.5}
-								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-							/>
-						</svg>
-
-						<span>Fast response - within a few hours</span>
-					</div>
-				</div>
-
-				{/* == */}
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-				<div>
-					<ButtonSecondary href="/author">See host profile</ButtonSecondary>
-				</div>
-			</div>
-		);
-	};
-
-	const renderSection6 = () => {
-		return (
-			<div className="listingSection__wrap">
-				{/* HEADING */}
-				<h2 className="text-2xl font-semibold">Reviews (23 reviews)</h2>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-
-				{/* Content */}
-				<div className="space-y-5">
-					<FiveStartIconForRate iconClass="w-6 h-6" className="space-x-0.5" />
-					<div className="relative">
-						<Input
-							fontClass=""
-							sizeClass="h-16 px-4 py-3"
-							rounded="rounded-3xl"
-							placeholder="Share your thoughts ..."
-						/>
-						<ButtonCircle
-							className="absolute right-2 top-1/2 transform -translate-y-1/2"
-							size=" w-12 h-12 "
-						>
-							<ArrowRightIcon className="w-5 h-5" />
-						</ButtonCircle>
-					</div>
-				</div>
-
-				{/* comment */}
-				<div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-					<CommentListing className="py-8" />
-					<CommentListing className="py-8" />
-					<CommentListing className="py-8" />
-					<CommentListing className="py-8" />
-					<div className="pt-8">
-						<ButtonSecondary>View more 20 reviews</ButtonSecondary>
-					</div>
-				</div>
-			</div>
-		);
-	};
-
-	const renderSection7 = () => {
-		return (
-			<div className="listingSection__wrap">
-				{/* HEADING */}
-				<div>
-					<h2 className="text-2xl font-semibold">Location</h2>
-					<span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-						San Diego, CA, United States of America (SAN-San Diego Intl.)
-					</span>
-				</div>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-				{/* MAP */}
-				<div className="aspect-w-5 aspect-h-5 sm:aspect-h-3 ring-1 ring-black/10 rounded-xl z-0">
-					<div className="rounded-xl overflow-hidden z-0">
-						<iframe
-							width="100%"
-							height="100%"
-							loading="lazy"
-							allowFullScreen
-							referrerPolicy="no-referrer-when-downgrade"
-							src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAGVJfZMAKYfZ71nzL_v5i3LjTTWnCYwTY&q=Eiffel+Tower,Paris+France"
-						></iframe>
-					</div>
-				</div>
-			</div>
-		);
-	};
-
-	const renderSection8 = () => {
-		return (
-			<div className="listingSection__wrap">
-				{/* HEADING */}
-				<h2 className="text-2xl font-semibold">Things to know</h2>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-				{/* CONTENT */}
-				<div>
-					<h4 className="text-lg font-semibold">Cancellation policy</h4>
-					<span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-						Any experience can be canceled and fully refunded within 24 hours of
-						purchase, or at least 7 days before the experience starts.
-					</span>
-				</div>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-				{/* CONTENT */}
-				<div>
-					<h4 className="text-lg font-semibold">Guest requirements</h4>
-					<span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-						Up to 10 guests ages 4 and up can attend. Parents may also bring
-						children under 2 years of age.
-					</span>
-				</div>
-				<div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-				{/* CONTENT */}
-				<div>
-					<h4 className="text-lg font-semibold">What to bring</h4>
-					<div className="prose sm:prose">
-						<ul className="mt-3 text-neutral-500 dark:text-neutral-400 space-y-2">
-							<li>
-								Formal Wear To Visit Bai Dinh Pagoda Be ready before 7.30 Am.
-							</li>
-							<li>We will pick up from 07.30 to 08.00 AM</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		);
@@ -440,24 +221,24 @@ SNG – 215 AZN for one person in a single room
 DBL – 362 AZN for two people in a double room */
 
 			<div className="listingSectionSidebar__wrap shadow-xl">
-				<p className="text-2xl font-semibold">Qiymət</p>
+				<p className="text-2xl font-semibold">{td("price")}</p>
 				<div className="flex justify-between flex-col">
 					<span className="text-lg font-medium">
 						111 AZN
 						<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
-							bir nəfərlik otaqda bir nəfər üçün
+							{t("price1")}
 						</span>
 					</span>
 					<span className="text-lg font-medium">
 						94 AZN
 						<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
-							iki nəfərlik otaqda bir nəfər üçün
+							{t("price2")}
 						</span>
 					</span>
 					<span className="text-lg font-medium">
 						109 AZN
 						<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
-							üç nəfərlik otaqda bir nəfər üçün
+							{t("price3")}
 						</span>
 					</span>
 				</div>
@@ -510,7 +291,7 @@ DBL – 362 AZN for two people in a double room */
 					</label>
 				</form>
 				{/* SUBMIT */}
-				<ButtonPrimary onClick={handleSubmit}>Bron etmək</ButtonPrimary>
+				<ButtonPrimary onClick={handleSubmit}>{td("bron")}</ButtonPrimary>
 			</div>
 		);
 	};
@@ -531,7 +312,7 @@ DBL – 362 AZN for two people in a double room */
 							src={PHOTOS[0]}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
 						/>
-						<div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity"></div>
+						<div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity" />
 					</div>
 					{PHOTOS.filter((_, i) => i >= 1 && i < 4).map((item, index) => (
 						<div

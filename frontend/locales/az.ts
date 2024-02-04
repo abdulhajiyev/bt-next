@@ -1,59 +1,96 @@
 // locales/az.ts
 export default {
-  hero: 'Yeni səyahətinizi kəşf edin',
-  herodesc: 'Unudulmaz səyahətlərə çıxın: Macəra pasportunuz sizi gözləyir! B&T ilə dünyanı kəşf edin - Hər məkan bir hekayə və hər təcrübə bir xatirədir',
-  navigation: {
-    home: 'Əsas səhifə',
-    tours: {
-      label: 'Turlar',
-      abroad: 'Xarici turlar',
-      inCountry: 'Azərbaycanda turlar',
-      all: 'Bütün turlar',
-    },
-    services: 'Xidmətlər',
-    about: {
-      label: 'Haqqımızda',
-      us: 'B&T haqqında',
-      contact: 'Bizimlə əlaqə saxlayın',
-    },
-    menu: 'Menyu'
-  },
-  tours: {
-    abroad: {
-      doha: {
-        name: 'Doha',
-        description: 'Soyuq qış günlərində ruhunuzu isidəcək Doha turunu sizə təqdim edirik!',
-      }
-    }
-  },
-  footer: {
-    termsAndPolicies: {
-      label: 'Şərtlər və siyasət',
-      privacyPolicy: 'Gizlilik siyasəti',
-      termsOfUse: 'İstifadə şərtləri',
-      accessibility: 'Əlverişlilik',
-      rewardSystemPolicy: 'Mükafat sistemi siyasəti',
-    },
-    help: {
-      label: 'Kömək',
-      support: 'Dəstək',
-      cancelBookings: 'Rezervasiyalarınızı ləğv edin',
-      useCoupon: 'Kupon istifadə et',
-      refundPolicies: 'Geri qaytarma qaydaları',
-      internationalTravelDocuments: 'Beynəlxalq səfər sənədləri',
-    },
-    contact: {
-      label: 'Bizimlə əlaqə saxlayın',
-      contact: 'Əlaqə',
-      address: 'Ünvan',
-      phone: 'Telefon',
-      email: 'Email',
-      socials: 'Sosial şəbəkələr',
-      fullName: 'Ad və soyad',
-      emailAddress: 'Email ünvanı',
-      message: 'Mesaj',
-      send: 'Mesaj göndər',
-    }
-  },
-
+	hero: "Yeni səyahətinizi kəşf edin",
+	herodesc:
+		"Unudulmaz səyahətlərə çıxın: Macəra pasportunuz sizi gözləyir! B&T ilə dünyanı kəşf edin - Hər məkan bir hekayə və hər təcrübə bir xatirədir",
+	navigation: {
+		home: "Əsas səhifə",
+		tours: {
+			label: "Turlar",
+			abroad: "Xarici turlar",
+			inCountry: "Azərbaycanda turlar",
+			all: "Bütün turlar",
+		},
+		services: "Xidmətlər",
+		about: {
+			label: "Haqqımızda",
+			us: "B&T haqqında",
+			contact: "Bizimlə əlaqə saxlayın",
+		},
+		menu: "Menyu",
+	},
+	tours: {
+		default: {
+      bron: "Bron etmək",
+      price: "Qiymət",
+			night: "Gecə",
+			breakfast: "Səhər yeməyi",
+			transfer: "Transfer",
+			guide: "Bələdçi xidməti",
+			includedInTour: "Tur proqrama daxildir",
+			includedInPrice: "Qiymətə daxildir",
+		},
+		abroad: {
+			doha: {
+				name: "Doha",
+				description:
+					"Soyuq qış günlərində ruhunuzu isidəcək Doha turunu sizə təqdim edirik!",
+			},
+		},
+		domestic: {
+			qabala: {
+				name: "Qəbələ",
+				description: "2 Gün 1 Gecəlik Qəbələ-Bakı-Qəbələ turu (qatar ilə)",
+				location: "Qəbələ, Azərbaycan",
+				day: "Gün",
+				day1_1: "28 May Dəmiryolu vağzalında görüş",
+				day1_2: "Bakıdan Qəbələyə yoladüşmə",
+				day1_3: "Qəbələyə çatma",
+				day1_4: "Qəbələ dəmiryol vağzalından qarşılanma və otelə yola düşmək",
+				day1_5: "Otelə çatma",
+				day1_6: "Qeydiyyat etdikdən sonra asudə vaxt",
+				day2_1: "Oteldə səhər yeməyi və asudə vaxt",
+				day2_2: "Qəbələ dəmiryol vağzalına yola düşmə",
+				day2_3: "Qəbələ dəmiryol vağzalına çatma",
+				day2_4: "Qeydiyyat və yerləşmə",
+				day2_5: "Qəbələ-Bakı",
+				inc1: "Bakı – Qəbələ – Bakı istiqaməti üzrə seçilmiş sinif üçün qatar bileti",
+				inc2: "Qəbələ Dəmiryol vağzalından otelə və geri dönüş transferi",
+				inc3: "1 gecə oteldə qonaqlama",
+				inc4: "1 dəfə oteldə səhər yeməyi",
+				price1: "bir nəfərlik otaqda bir nəfər üçün",
+				price2: "iki nəfərlik otaqda bir nəfər üçün",
+				price3: "üç nəfərlik otaqda bir nəfər üçün",
+			},
+		},
+	},
+	footer: {
+		termsAndPolicies: {
+			label: "Şərtlər və siyasət",
+			privacyPolicy: "Gizlilik siyasəti",
+			termsOfUse: "İstifadə şərtləri",
+			accessibility: "Əlverişlilik",
+			rewardSystemPolicy: "Mükafat sistemi siyasəti",
+		},
+		help: {
+			label: "Kömək",
+			support: "Dəstək",
+			cancelBookings: "Rezervasiyalarınızı ləğv edin",
+			useCoupon: "Kupon istifadə et",
+			refundPolicies: "Geri qaytarma qaydaları",
+			internationalTravelDocuments: "Beynəlxalq səfər sənədləri",
+		},
+		contact: {
+			label: "Bizimlə əlaqə saxlayın",
+			contact: "Əlaqə",
+			address: "Ünvan",
+			phone: "Telefon",
+			email: "Email",
+			socials: "Sosial şəbəkələr",
+			fullName: "Ad və soyad",
+			emailAddress: "Email ünvanı",
+			message: "Mesaj",
+			send: "Mesaj göndər",
+		},
+	},
 } as const;
