@@ -21,12 +21,14 @@ export default {
 	},
 	tours: {
 		default: {
-      bron: "Book",
-      price: "Price",
+			bron: "Book",
+			price: "Price",
 			night: "Night",
+			planeTicket: "Plane ticket",
 			breakfast: "Breakfast",
 			transfer: "Transfer",
 			guide: "Guide service",
+			insurance: "Insurance",
 			includedInTour: "Included in the program",
 			includedInPrice: "Included in the price",
 		},
@@ -36,12 +38,23 @@ export default {
 				description:
 					"We present to you the Doha tour that will warm your soul on cold winter days!",
 			},
+			bodrum: {
+				name: "Bodrum",
+				description: "Bodrum tour",
+				location: "Bodrum, Türkiye",
+				inc1: "Plane ticket",
+				inc2: "Visiting",
+				inc3: "3 times meal",
+				inc4: "Transfer",
+				inc5: "Insurance",
+				price: "The price is for 1 person in a double room",
+			},
 		},
 		domestic: {
 			qabala: {
 				name: "Gabala",
 				description: "2 Days 1 Night Gabala-Baku-Gabala tour (by train)",
-				location: "Gabala, Azerbaijan", 
+				location: "Gabala, Azerbaijan",
 				day: "Day",
 				day1_1: "Meeting at Demirliu station",
 				day1_2: "Travel from Baku to Gabala",
@@ -66,7 +79,8 @@ export default {
 				name: "Shusha",
 				description: "Shusha Tour",
 				location: "Shusha, Azerbaijan",
-				susa1: "Familiarization with the commemorative plaque dedicated to Memorial Day in Fuzuli district and the ruins in the center of Fuzuli city",
+				susa1:
+					"Familiarization with the commemorative plaque dedicated to Memorial Day in Fuzuli district and the ruins in the center of Fuzuli city",
 				susa2: "Museum-mausoleum complex of Molla Panah Vagif",
 				susa3: "Jidir Plain",
 				susa4: "House-Museum of Bulbul",
@@ -80,7 +94,8 @@ export default {
 				susa12: "The spring was built at the expense of the poet",
 				susa13: "Shusha Castle",
 				susa14: "The Ganja Gate of Shusha Castle and the symbol Khari Bulbul",
-				susa15: "The statue of Uzeyir Hajibeyli and the territory of the Natavan mansion (mulberry garden)",
+				susa15:
+					"The statue of Uzeyir Hajibeyli and the territory of the Natavan mansion (mulberry garden)",
 				susa16: "Saatli mosque",
 				susa17: "Carpet Museum",
 				inc1: "Guide service throughout the tour",
@@ -89,7 +104,6 @@ export default {
 				inc4: "1 time breakfast at the hotel",
 				price1: "for one person in a single room",
 				price2: "for two people in a double room",
-
 			},
 			nakhchivan: {
 				name: "2-Day / 1-Night Nakhchivan Tour (by plane)",
@@ -120,8 +134,7 @@ export default {
 				price1: "per person in a single room",
 				price2: "per person in a double room for two",
 				price3: "per person in a triple room for two",
-			}
-			
+			},
 		},
 	},
 	footer: {

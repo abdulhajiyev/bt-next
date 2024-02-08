@@ -21,12 +21,14 @@ export default {
 	},
 	tours: {
 		default: {
-      bron: "Bron etmək",
-      price: "Qiymət",
+			bron: "Bron etmək",
+			price: "Qiymət",
 			night: "Gecə",
+			planeTicket: "Təyyarə bileti",
 			breakfast: "Səhər yeməyi",
 			transfer: "Transfer",
 			guide: "Bələdçi xidməti",
+			insurance: "Sığorta",
 			includedInTour: "Tur proqrama daxildir",
 			includedInPrice: "Qiymətə daxildir",
 		},
@@ -35,6 +37,17 @@ export default {
 				name: "Doha",
 				description:
 					"Soyuq qış günlərində ruhunuzu isidəcək Doha turunu sizə təqdim edirik!",
+			},
+			bodrum: {
+				name: "Bodrum",
+				description: "Bodrum tour",
+				location: "Bodrum, Türkiye",
+				inc1: "Plane ticket",
+				inc2: "Visiting",
+				inc3: "3 times meal",
+				inc4: "Transfer",
+				inc5: "Insurance",
+				price: "The price is for 1 person in a double room",
 			},
 		},
 		domestic: {
@@ -66,7 +79,8 @@ export default {
 				name: "Şuşa",
 				description: "Şuşa turu",
 				location: "Şuşa, Azərbaycan",
-				susa1: "Füzuli rayonunda Anım Gününə həsr olunmuş xatirə lövhəsi və Füzuli şəhərinin mərkəzindəki dağıntılar ilə tanışlıq",
+				susa1:
+					"Füzuli rayonunda Anım Gününə həsr olunmuş xatirə lövhəsi və Füzuli şəhərinin mərkəzindəki dağıntılar ilə tanışlıq",
 				susa2: "Molla Pənah Vaqifin muzey-məqbərə kompleksi",
 				susa3: "Cıdır düzü",
 				susa4: "Bülbülün ev-muzeyi",
@@ -80,7 +94,8 @@ export default {
 				susa12: "Şairənin vəsaiti hesabına inşa edilmiş bulaq",
 				susa13: "Şuşa qalası",
 				susa14: "Şuşa qalasının Gəncə qapısı və “Xarı Bülbül” simvolu",
-				susa15: "Üzeyir Hacıbəylinin heykəli və Natəvan malikanəsinin ərazisi (tut bağı)",
+				susa15:
+					"Üzeyir Hacıbəylinin heykəli və Natəvan malikanəsinin ərazisi (tut bağı)",
 				susa16: "Saatlı məscidi",
 				susa17: "Xalça muzeyi",
 				inc1: "Tur boyu bələdçi xidməti",
@@ -89,7 +104,6 @@ export default {
 				inc4: "1 dəfə oteldə səhər yeməyi",
 				price1: "bir nəfərlik otaqda bir nəfər üçün",
 				price2: "iki nəfərlik otaqda iki nəfər üçün",
-
 			},
 			nakhchivan: {
 				name: "2 Gün / 1 Gecəlik Naxçıvan turu (təyyarə ilə)",
@@ -120,8 +134,7 @@ export default {
 				price1: "bir nəfərlik otaqda bir nəfər üçün",
 				price2: "iki nəfərlik otaqda iki nəfər üçün",
 				price3: "üç nəfərlik otaqda iki nəfər üçün",
-
-			}
+			},
 		},
 	},
 	footer: {
