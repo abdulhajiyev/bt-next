@@ -37,6 +37,15 @@ const TOURS: TaxonomyType[] = [
 		thumbnail:
 			"https://upload.wikimedia.org/wikipedia/commons/7/72/Suqovushan_1.jpg",
 	},
+	{
+		id: "5",
+		href: "/tours/abroad/bodrum",
+		name: "Bodrum",
+		taxonomy: "category",
+		count: 188288,
+		thumbnail:
+			"https://upload.wikimedia.org/wikipedia/commons/c/cb/Bodrum_castle_3.JPG",
+	},
 ];
 
 export default function Page({ params }: { params: { slug: string } }) {
