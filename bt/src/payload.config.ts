@@ -16,8 +16,8 @@ export default buildConfig({
 		bundler: webpackBundler(),
 	},
 	serverURL: process.env.PAYLOAD_SERVER,
-	cors: ["http://localhost:3000", "https://cms.bookand.travel"].filter(Boolean),
-	csrf: ["http://localhost:3001", "http://localhost:3000", "https://cms.bookand.travel"],
+	cors: ["http://localhost:3000", "https://cms.bookand.travel", "https://bookand.travel"].filter(Boolean),
+	csrf: ["http://localhost:3001", "http://localhost:3000", "https://cms.bookand.travel", "https://bookand.travel"],
 	editor: slateEditor({}),
 	collections: [
 		Users,
