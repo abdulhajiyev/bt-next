@@ -54,13 +54,13 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 		createdAt: "",
 	});
 	const id = thisPathname.split("/").pop();
-	console.log("id", id);
+	// console.log("id", id);
 
 	useEffect(() => {
 		const fetchTourData = async () => {
 			try {
 				const res = await fetch(
-					`http://localhost:3001/api/tours/${id}?locale=${params.locale}`,
+					`https://cms.bookand.travel/api/tours/${id}?locale=${params.locale}`,
 				);
 				if (res.ok) {
 					const data = await res.json();
@@ -113,7 +113,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 	);
 
 	const renderSection1 = () => {
-		console.log("tourData", tourData);
+		// console.log("tourData", tourData);
 		const data = tourData;
 		return (
 			<div className="listingSection__wrap !space-y-6">
@@ -157,7 +157,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 	};
 
 	const renderSection2 = () => {
-		console.log("tourData", tourData);
+		// console.log("tourData", tourData);
 		const data = tourData;
 		return (
 			<div className="listingSection__wrap">

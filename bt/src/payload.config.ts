@@ -15,9 +15,9 @@ export default buildConfig({
 		user: Users.slug,
 		bundler: webpackBundler(),
 	},
-	serverURL: "http://localhost:3001",
-	cors: ["http://localhost:3000"].filter(Boolean),
-	csrf: ["http://localhost:3001", "http://localhost:3000"],
+	serverURL: process.env.PAYLOAD_SERVER,
+	cors: ["http://localhost:3000", "https://cms.bookand.travel"].filter(Boolean),
+	csrf: ["http://localhost:3001", "http://localhost:3000", "https://cms.bookand.travel"],
 	editor: slateEditor({}),
 	collections: [
 		Users,
@@ -40,6 +40,12 @@ export default buildConfig({
 			upload: true,
 		},
 	],
+	routes: {
+		api: '/api',
+		admin: '/admin',
+		graphQL: '/graphql',
+		graphQLPlayground: '/graphql-playground',
+	},
 	upload: {
 		limits: {
 			fileSize: 20000000, // 5MB, written in bytes

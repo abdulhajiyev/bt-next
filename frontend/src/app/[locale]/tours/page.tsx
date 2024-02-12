@@ -77,14 +77,14 @@ const ExperienceCard = ({ href, galleryImgs, tourName }) => (
 );
 
 async function getData(locale) {
-	const res = await fetch(`http://localhost:3001/api/tours?locale=${locale}`);
+	const res = await fetch(`https://cms.bookand.travel/api/tours?locale=${locale}`);
 
 	if (!res.ok) {
 		throw new Error("Failed to fetch data");
 	}
 
 	const data = await res.json();
-	console.log(data.docs);
+	// console.log(data.docs);
 	const experiences = data.docs.map((doc) => ({
 		href: `/tours/${doc.id}`,
 		galleryImgs: doc.tourImages.map((image) => image.image.url),

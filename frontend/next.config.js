@@ -26,6 +26,9 @@ const nextConfig = {
 				hostname: "localhost",
 			},
 			{
+				hostname: "cms.bookand.travel",
+			},
+			{
 				protocol: "https",
 				hostname: "shusha.gov.az",
 				port: "",
