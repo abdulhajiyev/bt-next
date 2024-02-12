@@ -23,6 +23,9 @@ const nextConfig = {
 				pathname: "/**",
 			},
 			{
+				hostname: "localhost",
+			},
+			{
 				protocol: "https",
 				hostname: "shusha.gov.az",
 				port: "",
