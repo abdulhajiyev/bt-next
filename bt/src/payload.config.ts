@@ -15,13 +15,9 @@ export default buildConfig({
 		user: Users.slug,
 		bundler: webpackBundler(),
 	},
-	serverURL: "http://194.15.103.61:3001",
+	serverURL: "http://localhost:3001",
 	cors: ["http://localhost:3000"].filter(Boolean),
-	csrf: [
-		"http://localhost:3001",
-		"http://localhost:3000",
-		"http://194.15.103.61",
-	],
+	csrf: ["http://localhost:3001", "http://localhost:3000"],
 	editor: slateEditor({}),
 	collections: [
 		Users,
