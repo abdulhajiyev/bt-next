@@ -61,6 +61,9 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 			try {
 				const res = await fetch(
 					`https://cms.bookand.travel/api/tours/${id}?locale=${params.locale}`,
+					{
+						mode: "no-cors",
+					}
 				);
 				if (res.ok) {
 					const data = await res.json();
