@@ -60,7 +60,8 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 		const fetchTourData = async () => {
 			try {
 				const res = await fetch(
-					`https://cms.bookand.travel/api/tours/${id}?locale=${params.locale}`
+					`https://cms.bookand.travel/api/tours/${id}?locale=${params.locale}`,
+					{ cache: "no-store" }
 				);
 				if (res.ok) {
 					const data = await res.json();
