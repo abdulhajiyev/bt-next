@@ -165,7 +165,8 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 				{/* <h2 className="text-2xl font-semibold">{td("includedInTour")}</h2> */}
 				{/* <RichTextRenderer content={data.tourInfo} /> */}
 				<div
-					className="text-neutral-6000 dark:text-neutral-300 prose"
+					className="text-neutral-6000 dark:text-neutral-300 prose dark:prose-invert"
+					style={{ overflowWrap: "break-word", wordWrap: "break-word" }}
 					dangerouslySetInnerHTML={{ __html: data.tourInfo_html }}
 				/>
 				{/* <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" /> */}
@@ -241,9 +242,9 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 				<div className="flex justify-between flex-col">
 					{tourData.price.map((priceItem) => (
 						<div key={priceItem.id}>
-							<span className="text-lg font-medium">
+							<span className="text-lg font-medium block max-w-xs">
 								{priceItem.value} AZN
-								<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
+								<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400 text-wrap break-words">
 									{priceItem.description}
 								</span>
 							</span>
@@ -325,9 +326,8 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					{PHOTOS.filter((_, i) => i >= 1 && i < 4).map((item, index) => (
 						<div
 							key={index}
-							className={`relative rounded-md sm:rounded-xl overflow-hidden ${
-								index >= 2 ? "block" : ""
-							}`}
+							className={`relative rounded-md sm:rounded-xl overflow-hidden ${index >= 2 ? "block" : ""
+								}`}
 						>
 							<div className="aspect-w-4 aspect-h-3">
 								<Image
