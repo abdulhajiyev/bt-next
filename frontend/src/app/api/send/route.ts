@@ -14,7 +14,7 @@ export async function POST(req, res) {
 		secure: false,
 		auth: {
 			user: "reservation@bookand.travel",
-			pass: "test12345.",
+			pass: "Admin12345!",
 		},
 	});
 
