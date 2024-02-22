@@ -33,7 +33,7 @@ export async function POST(req, res) {
 	};
 
 	try {
-		transporter.sendMail(mailOptions);
+		await transporter.sendMail(mailOptions);
 		return NextResponse.json({ message: "Email sent successfully" });
 	} catch (error) {
 		return NextResponse.error();
