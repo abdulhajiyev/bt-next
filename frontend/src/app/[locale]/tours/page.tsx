@@ -113,28 +113,6 @@ export default async function Page({
 					<ExperienceCard key={index} {...experience} />
 				))}
 			</div>
-
-			{/* <div className={"nc-ExperiencesCard group relative"}>
-				<div className="relative w-full rounded-2xl overflow-hidden ">
-					<GallerySlider
-						ratioClass="aspect-w-3 aspect-h-3"
-						galleryImgs={galleryImgs}
-						href={href}
-					/>
-				</div>
-				<Link href={href}>
-					<div className="py-4 space-y-3">
-						<div className="space-y-2">
-							<div className="flex items-center text-neutral-500 dark:text-neutral-400 text-sm space-x-2">
-								<span className="text-base font-semibold">Tour Name</span>
-							</div>
-						</div>
-						<div className="border-b border-neutral-100 dark:border-neutral-800" />
-					</div>
-				</Link>
-			</div> */}
-
-			{/* All tours {params.slug} */}
 		</div>
 	);
 }

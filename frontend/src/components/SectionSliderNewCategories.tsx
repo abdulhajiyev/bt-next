@@ -171,11 +171,6 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 
 	return (
 		<div className={`nc-SectionSliderNewCategories ${className}`}>
-			<Heading 
-      desc={subHeading}
-      isCenter={sliderStyle === "style2"}>
-				Turlar
-			</Heading>
 			<MotionConfig
 				transition={{
 					x: { type: "spring", stiffness: 300, damping: 30 },
