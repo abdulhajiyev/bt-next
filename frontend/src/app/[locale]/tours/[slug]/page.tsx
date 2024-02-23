@@ -243,7 +243,9 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					{tourData.price.map((priceItem) => (
 						<div key={priceItem.id}>
 							<span className="text-lg font-medium block max-w-xs">
-								{priceItem.value} AZN
+								<span className="uppercase">
+									{priceItem.value} {priceItem.currency}
+								</span>
 								<span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400 text-wrap break-words">
 									{priceItem.description}
 								</span>
@@ -326,8 +328,9 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					{PHOTOS.filter((_, i) => i >= 1 && i < 4).map((item, index) => (
 						<div
 							key={index}
-							className={`relative rounded-md sm:rounded-xl overflow-hidden ${index >= 2 ? "block" : ""
-								}`}
+							className={`relative rounded-md sm:rounded-xl overflow-hidden ${
+								index >= 2 ? "block" : ""
+							}`}
 						>
 							<div className="aspect-w-4 aspect-h-3">
 								<Image

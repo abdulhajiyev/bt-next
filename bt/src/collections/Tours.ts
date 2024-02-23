@@ -154,5 +154,10 @@ export const Tours: CollectionConfig = {
 				},
 			],
 		},
+		{
+			name: "isHidden",
+			label: "Hidden",
+			type: "checkbox",
+		}
 	],
 };

@@ -45,7 +45,7 @@ const ExperienceCard = ({ href, galleryImgs, tourName }) => (
 
 async function getData(locale) {
 	const res = await fetch(
-		`https://cms.bookand.travel/api/tours?locale=${locale}&where[isDomestic][not_equals]=true`,
+		`https://cms.bookand.travel/api/tours?locale=${locale}&where[isDomestic][not_equals]=true&where[isHidden][not_equals]=true`,
 		{ cache: "no-store" },
 	);
 

@@ -77,8 +77,10 @@ const ExperienceCard = ({ href, galleryImgs, tourName }) => (
 );
 
 async function getData(locale) {
-	const res = await fetch(`https://cms.bookand.travel/api/tours?locale=${locale}`,
-	{ cache: "no-store" });
+	const res = await fetch(
+		`https://cms.bookand.travel/api/tours?locale=${locale}&where[isHidden][not_equals]=true`,
+		{ cache: "no-store" },
+	);
 
 	if (!res.ok) {
 		throw new Error("Failed to fetch data");
