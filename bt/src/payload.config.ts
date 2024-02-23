@@ -16,8 +16,13 @@ export default buildConfig({
 		bundler: webpackBundler(),
 	},
 	serverURL: process.env.PAYLOAD_SERVER,
-	cors: ["http://localhost:3000", "https://cms.bookand.travel", "https://bookand.travel"].filter(Boolean),
-	csrf: ["http://localhost:3001", "http://localhost:3000", "https://cms.bookand.travel", "https://bookand.travel"],
+	cors: "*", // Allow all origins
+	csrf: [
+		"http://localhost:3001",
+		"http://localhost:3000",
+		"https://cms.bookand.travel",
+		"https://bookand.travel",
+	],
 	editor: slateEditor({}),
 	collections: [
 		Users,
@@ -41,10 +46,10 @@ export default buildConfig({
 		},
 	],
 	routes: {
-		api: '/api',
-		admin: '/admin',
-		graphQL: '/graphql',
-		graphQLPlayground: '/graphql-playground',
+		api: "/api",
+		admin: "/admin",
+		graphQL: "/graphql",
+		graphQLPlayground: "/graphql-playground",
 	},
 	upload: {
 		limits: {

@@ -101,6 +101,27 @@ export const Tours: CollectionConfig = {
 					localized: true,
 					required: true,
 				},
+				{
+					name: "currency",
+					label: "Currency",
+					type: "select",
+					required: false,
+					options: [
+						{
+							label: "USD",
+							value: "usd",
+						},
+						{
+							label: "EUR",
+							value: "eur",
+						},
+						{
+							label: "AZN",
+							value: "azn",
+						},
+					],
+					defaultValue: "usd",
+				},
 			],
 		},
 		{
