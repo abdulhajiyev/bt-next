@@ -8,7 +8,9 @@ import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
 import { Tours } from "./collections/Tours";
+import { Sort } from "./collections/Sort";
 import { Media } from "./collections/Media";
+import { Carousel } from "./collections/Carousel";
 
 export default buildConfig({
 	admin: {
@@ -27,6 +29,7 @@ export default buildConfig({
 	collections: [
 		Users,
 		Tours,
+		// Sort,
 		// Media,
 		{
 			slug: "media",
@@ -45,6 +48,8 @@ export default buildConfig({
 			upload: true,
 		},
 	],
+	// globals: [Sort],
+	globals: [Carousel, Sort],
 	routes: {
 		api: "/api",
 		admin: "/admin",

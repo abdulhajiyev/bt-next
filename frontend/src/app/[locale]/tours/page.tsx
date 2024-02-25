@@ -78,7 +78,7 @@ const ExperienceCard = ({ href, galleryImgs, tourName }) => (
 
 async function getData(locale) {
 	const res = await fetch(
-		`https://cms.bookand.travel/api/tours?locale=${locale}&where[isHidden][not_equals]=true`,
+		`https://cms.bookand.travel/api/globals/sort?locale=${locale}`,
 		{ cache: "no-store" },
 	);
 
@@ -87,11 +87,12 @@ async function getData(locale) {
 	}
 
 	const data = await res.json();
+	// console.log(data.sortedTours[0].tour);
 	// console.log(data.docs);
-	const experiences = data.docs.map((doc) => ({
-		href: `/tours/${doc.id}`,
-		galleryImgs: doc.tourImages.map((image) => image.image.url),
-		tourName: doc.title,
+	const experiences = data.sortedTours.map((doc) => ({
+		href: `/tours/${doc.tour.id}`,
+		galleryImgs: doc.tour.tourImages.map((image) => image.image.url),
+		tourName: doc.tour.title,
 	}));
 
 	return experiences;
