@@ -4,19 +4,23 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 // Custom color with css variable color in __theme_color.scss
 function customColors(cssVar) {
-  return ({ opacityVariable, opacityValue }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${cssVar}), ${opacityValue})`;
-    }
-    if (opacityVariable !== undefined) {
-      return `rgba(var(${cssVar}), var(${opacityVariable}, 1))`;
-    }
-    return `rgb(var(${cssVar}))`;
-  };
+	return ({ opacityVariable, opacityValue }) => {
+		if (opacityValue !== undefined) {
+			return `rgba(var(${cssVar}), ${opacityValue})`;
+		}
+		if (opacityVariable !== undefined) {
+			return `rgba(var(${cssVar}), var(${opacityVariable}, 1))`;
+		}
+		return `rgb(var(${cssVar}))`;
+	};
 }
 
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+	content: [
+		"./src/**/*.{js,jsx,ts,tsx}",
+		"./public/index.html",
+		"node_modules/flowbite-react/lib/esm/**/*.js",
+	],
 	darkMode: "class",
 	theme: {
 		container: {
@@ -87,5 +91,6 @@ module.exports = {
 		require("@tailwindcss/typography"),
 		require("@tailwindcss/forms"),
 		require("@tailwindcss/aspect-ratio"),
+		require("flowbite/plugin"),
 	],
 };
