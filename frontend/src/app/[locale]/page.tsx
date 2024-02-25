@@ -176,7 +176,7 @@ async function getData(locale) {
 }
 
 async function getCarouselData() {
-	const res = await fetch("http://localhost:3001/api/globals/carousel", {
+	const res = await fetch("https://cms.bookand.travel/api/globals/carousel", {
 		cache: "no-store",
 	});
 
