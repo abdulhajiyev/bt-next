@@ -164,6 +164,7 @@ export default {
 			emailAddress: "Email address",
 			message: "Message",
 			send: "Send Message",
+			notes: "Additional notes",
 		},
 	},
 } as const;

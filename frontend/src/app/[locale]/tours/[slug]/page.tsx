@@ -1,34 +1,14 @@
 "use client";
 
 import React, { FC, useEffect, useState } from "react";
-import { ArrowRightIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
-import CommentListing from "@/components/CommentListing";
-import FiveStartIconForRate from "@/components/FiveStartIconForRate";
-import Avatar from "@/shared/Avatar";
-import Badge from "@/shared/Badge";
-import ButtonCircle from "@/shared/ButtonCircle";
+import { Squares2X2Icon } from "@heroicons/react/24/outline";
 import ButtonPrimary from "@/shared/ButtonPrimary";
-import ButtonSecondary from "@/shared/ButtonSecondary";
 import Input from "@/shared/Input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import LikeSaveBtns from "@/components/LikeSaveBtns";
-import StartRating from "@/components/StartRating";
-// import { PHOTOS } from "./constant";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Route } from "next";
 import ListingImageGallery from "@/components/listing-image-gallery/ListingImageGallery";
-import RichTextRenderer from "@/components/RichTextRenderer";
-
-import nakhchivan1 from "@/images/tours/nakhchivan/1.webp";
-import nakhchivan2 from "@/images/tours/nakhchivan/2.webp";
-import nakhchivan3 from "@/images/tours/nakhchivan/3.webp";
-import nakhchivan4 from "@/images/tours/nakhchivan/4.webp";
-import nakhchivan5 from "@/images/tours/nakhchivan/5.webp";
-import nakhchivan6 from "@/images/tours/nakhchivan/6.webp";
-import nakhchivan7 from "@/images/tours/nakhchivan/6.webp";
-
 import { ListingGalleryImage } from "@/components/listing-image-gallery/utils/types";
-import Label from "@/components/Label";
 import Textarea from "@/shared/Textarea";
 import { useScopedI18n } from "locales/client";
 
@@ -36,6 +16,7 @@ export type ListingExperiencesDetailPageProps = {};
 
 const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 	const td = useScopedI18n("tours.default");
+	const tc = useScopedI18n("footer.contact");
 	const thisPathname = usePathname();
 	const router = useRouter();
 	const [tourData, setTourData] = useState({
@@ -61,7 +42,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 			try {
 				const res = await fetch(
 					`https://cms.bookand.travel/api/tours/${id}?locale=${params.locale}`,
-					{ cache: "no-store" }
+					{ cache: "no-store" },
 				);
 				if (res.ok) {
 					const data = await res.json();
@@ -85,16 +66,6 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 		(imageObject) => imageObject.image.url,
 	);
 
-	const includes_demo = [
-		{
-			name: "Bakı – Naxçıvan – Bakı istiqaməti üzrə ekonom sinif təyyarə biletləri",
-		},
-		{ name: "Hoteldə  1 gecə qonaqlama" },
-		{ name: "Hoteldə 1 dəfə səhər yeməyi" },
-		{ name: "Naxçıvan hava limanı – Hotel – Naxçıvan hava limanı  transferi" },
-		// { name: "Halong Bay Entrance Ticket" },
-	];
-
 	const handleOpenModalImageGallery = () => {
 		router.push(`${thisPathname}/?modal=gallery` as Route);
 	};
@@ -114,7 +85,6 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 	);
 
 	const renderSection1 = () => {
-		// console.log("tourData", tourData);
 		const data = tourData;
 		return (
 			<div className="listingSection__wrap !space-y-6">
@@ -133,43 +103,19 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 
 				{/* 5 */}
 				<div className="w-full border-b border-neutral-100 dark:border-neutral-700" />
-
-				{/* 6 */}
-				{/* 				<div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
-					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-						<i className="las la-hotel text-2xl"></i>
-						<span className="">1 gecə</span>
-					</div>
-					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-						<i className="las la-coffee text-2xl"></i>
-						<span className="">Səhər yeməyi</span>
-					</div>
-					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-						<i className="las la-plane text-2xl"></i>
-						<span className="">Transfer</span>
-					</div>
-					<div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-						<i className="las la-user-circle text-2xl"></i>
-						<span className="">Bələdçi xidməti</span>
-					</div>
-				</div> */}
 			</div>
 		);
 	};
 
 	const renderSection2 = () => {
-		// console.log("tourData", tourData);
 		const data = tourData;
 		return (
 			<div className="listingSection__wrap">
-				{/* <h2 className="text-2xl font-semibold">{td("includedInTour")}</h2> */}
-				{/* <RichTextRenderer content={data.tourInfo} /> */}
 				<div
 					className="text-neutral-6000 dark:text-neutral-300 prose dark:prose-invert"
 					style={{ overflowWrap: "break-word", wordWrap: "break-word" }}
 					dangerouslySetInnerHTML={{ __html: data.tourInfo_html }}
 				/>
-				{/* <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" /> */}
 			</div>
 		);
 	};
@@ -208,9 +154,6 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// Perform any additional form validation if needed
-
-		// Send form data to your API endpoint
 		try {
 			const response = await fetch("/api/send", {
 				method: "POST",
@@ -258,7 +201,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 				<form className="flex flex-col gap-4 border-neutral-200 dark:border-neutral-700 rounded-3xl">
 					<label className="block">
 						<Input
-							placeholder="Ad, soyad"
+							placeholder={tc("fullName")}
 							type="text"
 							className="mt-1"
 							value={formData.name}
@@ -269,7 +212,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					</label>
 					<label className="block">
 						<Input
-							placeholder="Əlaqə nömrəsi"
+							placeholder={tc("phone")}
 							type="tel"
 							className="mt-1"
 							value={formData.phoneNumber}
@@ -281,7 +224,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					<label className="block">
 						<Input
 							type="email"
-							placeholder="bookandtravel@example.com"
+							placeholder={tc("emailAddress")}
 							className="mt-1"
 							value={formData.email}
 							onChange={(e) =>
@@ -291,7 +234,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 					</label>
 					<label className="block">
 						<Textarea
-							placeholder="Əlavə qeydlər"
+							placeholder={tc("notes")}
 							className="mt-1"
 							rows={6}
 							value={formData.additionalNotes}
@@ -323,7 +266,7 @@ const Page: FC<ListingExperiencesDetailPageProps> = ({ params }) => {
 							src={PHOTOS[0]}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
 						/>
-						<div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity"></div>
+						<div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity" />
 					</div>
 					{PHOTOS.filter((_, i) => i >= 1 && i < 4).map((item, index) => (
 						<div
