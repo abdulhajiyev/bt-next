@@ -13,7 +13,8 @@ const TOURS: TaxonomyType[] = [
 		href: "/tours/domestic/shusha",
 		name: "Şuşa",
 		taxonomy: "category",
-		thumbnail: "https://shusha.gov.az/uploads/fsfwf.png",
+		thumbnail:
+			"https://shusha.gov.az/storage/app/uploads/public/65d/8ce/b99/65d8ceb99c80d186374386.jpeg",
 	},
 	{
 		id: "2",
