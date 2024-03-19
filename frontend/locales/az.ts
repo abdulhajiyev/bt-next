@@ -31,6 +31,8 @@ export default {
 			insurance: "Sığorta",
 			includedInTour: "Tur proqrama daxildir",
 			includedInPrice: "Qiymətə daxildir",
+			latestTours: "Son əlavə olunan turlar",
+			seeAllTours: "Bütün turları gör",
 		},
 		abroad: {
 			doha: {

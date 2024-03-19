@@ -31,6 +31,8 @@ export default {
 			insurance: "Страховка",
 			includedInTour: "Включено в программу",
 			includedInPrice: "Включено в стоимость",
+			latestTours: "Последние туры",
+			seeAllTours: "Посмотреть все туры",
 		},
 		abroad: {
 			doha: {
